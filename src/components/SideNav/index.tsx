@@ -1,7 +1,6 @@
 "use client"
 
 export default function SideNav({ commands, onSelect }) {
-    // Sort commands alphabetically by name before rendering
     const sortedCommands = commands.sort((a, b) => a.name.localeCompare(b.name));
 
     return (

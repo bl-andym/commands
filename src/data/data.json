@@ -1,383 +1,379 @@
 {
-    "commands": [
-        {
-            "id": "cmd1",
-            "name": "git config",
-            "description": "edit config, save/close file to progress"
-        },
-        {
-            "id": "cmd2",
-            "name": "git clone",
-            "description": "clone a repository into a new directory"
-        },
-        {
-            "id": "cmd3",
-            "name": "git checkout",
-            "description": "switch branches or restore working tree files"
-        },
-        {
-            "id": "cmd4",
-            "name": "git commit",
-            "description": "record changes to the repository"
-        },
-        {
-            "id": "cmd5",
-            "name": "git cherry-pick",
-            "description": "apply changes introduced by some existing commits"
-        },
-        {
-            "id": "cmd6",
-            "name": "git restore",
-            "description": "restore working tree files"
-        },
-        {
-            "id": "cmd7",
-            "name": "git remote",
-            "description": "manage set of tracked repositories"
-        },
-        {
-            "id": "cmd8",
-            "name": "git reset",
-            "description": "reset current HEAD to the specified state"
-        },
-        {
-            "id": "cmd9",
-            "name": "git revert",
-            "description": "revert some existing commits"
-        },
-        {
-            "id": "cmd10",
-            "name": "git rm",
-            "description": "remove files from the working tree and from the index"
-        },
-        {
-            "id": "cmd11",
-            "name": "git rebase",
-            "description": "reapply commits on top of another base tip"
-        },
-        {
-            "id": "cmd12",
-            "name": "git reflog",
-            "description": "manage reflog information"
-        },
-        {
-            "id": "cmd13",
-            "name": "git status",
-            "description": "Displays the state of the working directory and the staging area."
-        },
-        {
-            "id": "cmd14",
-            "name": "git stash",
-            "description": "Stashes the changes in the working directory and the staging area."
-        },
-        {
-            "id": "cmd15",
-            "name": "git submodule",
-            "description": "Manages the submodules in the repository."
-        },
-        {
-            "id": "cmd16",
-            "name": "git switch",
-            "description": "Switches branches or restores the working directory."
-        },
-        {
-            "id": "cmd17",
-            "name": "git show",
-            "description": "Displays information about a commit or other Git object."
-        },
-        {
-            "id": "cmd18",
-            "name": "git shortlog",
-            "description": "Summarizes the commit history by author."
-        },
-        {
-            "id": "cmd19",
-            "name": "git show-branch",
-            "description": "Shows the commit history of the branches in the repository."
-        },
-        {
-            "id": "cmd20",
-            "name": "git update-index",
-            "description": "Manipulates the index or the staging area."
-        },
-        {
-            "id": "cmd21",
-            "name": "git update-ref",
-            "description": "Updates the object name stored in a ref safely."
-        },
-        {
-            "id": "cmd22",
-            "name": "git update-server-info",
-            "description": "Updates the auxiliary info file to help dumb servers discover the repository's HEAD."
-        },
-        {
-            "id": "cmd23",
-            "name": "git upload-archive",
-            "description": "Creates an archive of the specified commit."
-        }
-    ],
-    "options": [
-        {
-            "id": "opt1",
-            "commandId": "cmd1",
-            "name": "--global",
-            "description": "Applies the configuration settings to all repositories on the system for the current user."
-        },
-        {
-            "id": "opt2",
-            "commandId": "cmd1",
-            "name": "--edit",
-            "description": "Opens the global, system, or local Git configuration file in the default text editor."
-        },
-        {
-            "id": "opt26",
-            "commandId": "cmd1",
-            "name": "--blarBlar",
-            "description": "Blar blar"
-        },
-        {
-            "id": "opt3",
-            "commandId": "cmd2",
-            "name": "--branch <branch to clone from>",
-            "description": "Specifies a specific branch to clone from the repository."
-        },
-        {
-            "id": "opt4",
-            "commandId": "cmd2",
-            "name": "--mirror",
-            "description": "Creates a bare repository with all refs from the source repository."
-        },
-        {
-            "id": "opt5",
-            "commandId": "cmd3",
-            "name": "<branch>",
-            "description": "Switches to the specified branch."
-        },
-        {
-            "id": "opt6",
-            "commandId": "cmd4",
-            "name": "-m <message>",
-            "description": "Uses the specified `<message>` as the commit message."
-        },
-        {
-            "id": "opt7",
-            "commandId": "cmd5",
-            "name": "<commit-hash>",
-            "description": "Applies the changes from the specified commit to the current branch."
-        },
-        {
-            "id": "opt8",
-            "commandId": "cmd6",
-            "name": "<file>",
-            "description": "Specifies the path to the file that you want to restore."
-        },
-        {
-            "id": "opt9",
-            "commandId": "cmd7",
-            "name": "add <remoteName> <@url>",
-            "description": "Add a remote <name> for the repo at <url>."
-        },
-        {
-            "id": "opt10",
-            "commandId": "cmd8",
-            "name": "<commit>",
-            "description": "Resets the current branch to the specified commit."
-        },
-        {
-            "id": "opt11",
-            "commandId": "cmd9",
-            "name": "<commit>",
-            "description": "Reverts the changes made in the specified commit."
-        },
-        {
-            "id": "opt12",
-            "commandId": "cmd10",
-            "name": "<file>",
-            "description": "Specifies the path to the file or directory that you want to remove."
-        },
-        {
-            "id": "opt13",
-            "commandId": "cmd11",
-            "name": "<branch>",
-            "description": "Rebases the current branch onto the specified branch."
-        },
-        {
-            "id": "opt14",
-            "commandId": "cmd12",
-            "name": "--all",
-            "description": "Shows all references, not just those in the current repository."
-        },
-        {
-            "id": "opt15",
-            "commandId": "cmd13",
-            "name": "--short",
-            "description": "Gives the output in the short-format."
-        },
-        {
-            "id": "opt16",
-            "commandId": "cmd14",
-            "name": "save",
-            "description": "Stashes the changes in the working directory and the staging area."
-        },
-        {
-            "id": "opt17",
-            "commandId": "cmd15",
-            "name": "add <repository>",
-            "description": "Adds a new submodule to the repository."
-        },
-        {
-            "id": "opt18",
-            "commandId": "cmd16",
-            "name": "<branch>",
-            "description": "Switches to the specified branch."
-        },
-        {
-            "id": "opt19",
-            "commandId": "cmd17",
-            "name": "<object>",
-            "description": "Shows the object (commit, tag, tree, etc.) specified by its SHA or other identifier."
-        },
-        {
-            "id": "opt20",
-            "commandId": "cmd18",
-            "name": "-s",
-            "description": "Only shows the number of commits by each author. dvsdg"
-        },
-        {
-            "id": "opt21",
-            "commandId": "cmd19",
-            "name": "--all",
-            "description": "Shows all branches in the output."
-        },
-        {
-            "id": "opt22",
-            "commandId": "cmd20",
-            "name": "--assume-unchanged <file>",
-            "description": "Tells Git to stop checking the working tree files for possible modifications."
-        },
-        {
-            "id": "opt23",
-            "commandId": "cmd21",
-            "name": "<ref> <newvalue>",
-            "description": "Updates the object name stored in the ref with the new value."
-        },
-        {
-            "id": "opt24",
-            "commandId": "cmd22",
-            "name": "-f, --force",
-            "description": "Updates the server info even when it does not seem that update is necessary."
-        },
-        {
-            "id": "opt25",
-            "commandId": "cmd23",
-            "name": "<ref>",
-            "description": "Specifies the commit to upload."
-        }
-    ],
-    "examples": [
-        {
-            "optionId": "opt1",
-            "usage": "git config --global user.name 'John Doe'"
-        },
-        {
-            "optionId": "opt2",
-            "usage": "git config --edit"
-        },
-        {
-            "optionId": "opt3",
-            "usage": "git clone --branch dev https://github.com/user/repo.git"
-        },
-        {
-            "optionId": "opt4",
-            "usage": "git clone --mirror https://github.com/user/repo.git"
-        },
-        {
-            "optionId": "opt26",
-            "usage": "git blar --blar"
-        },
-        {
-            "optionId": "opt5",
-            "usage": "git checkout main"
-        },
-        {
-            "optionId": "opt6",
-            "usage": "git commit -m 'Add new feature'"
-        },
-        {
-            "optionId": "opt7",
-            "usage": "git cherry-pick #123456"
-        },
-        {
-            "optionId": "opt8",
-            "usage": "git restore myfile.txt"
-        },
-        {
-            "optionId": "opt9",
-            "usage": "git remote add origin https://github.com/user/repo.git"
-        },
-        {
-            "optionId": "opt10",
-            "usage": "git reset 123456"
-        },
-        {
-            "optionId": "opt11",
-            "usage": "git revert 123456"
-        },
-        {
-            "optionId": "opt12",
-            "usage": "git rm myfile.txt"
-        },
-        {
-            "optionId": "opt13",
-            "usage": "git rebase main"
-        },
-        {
-            "optionId": "opt14",
-            "usage": "git reflog --all"
-        },
-        {
-            "optionId": "opt15",
-            "usage": "git status --short"
-        },
-        {
-            "optionId": "opt16",
-            "usage": "git stash save"
-        },
-        {
-            "optionId": "opt17",
-            "usage": "git submodule add https://github.com/example/repo.git"
-        },
-        {
-            "optionId": "opt18",
-            "usage": "git switch main"
-        },
-        {
-            "optionId": "opt19",
-            "usage": "git show 123456"
-        },
-        {
-            "optionId": "opt20",
-            "usage": "git shortlog -s"
-        },
-        {
-            "optionId": "opt21",
-            "usage": "git show-branch --all"
-        },
-        {
-            "optionId": "opt22",
-            "usage": "git update-index --assume-unchanged myfile.txt"
-        },
-        {
-            "optionId": "opt23",
-            "usage": "git update-ref refs/heads/master 123456"
-        },
-        {
-            "optionId": "opt24",
-            "usage": "git update-server-info --force"
-        },
-        {
-            "optionId": "opt25",
-            "usage": "git upload-archive master /path/to/directory"
+    "categories": [
+        {
+            "id": "cat1",
+            "name": "Git Commands",
+            "commands": [
+                {
+                    "id": "cmd1",
+                    "name": "git config",
+                    "description": "edit config, save/close file to progress"
+                },
+                {
+                    "id": "cmd2",
+                    "name": "git clone",
+                    "description": "clone a repository into a new directory"
+                },
+                {
+                    "id": "cmd3",
+                    "name": "git checkout",
+                    "description": "switch branches or restore working tree files"
+                },
+                {
+                    "id": "cmd4",
+                    "name": "git commit",
+                    "description": "record changes to the repository"
+                },
+                {
+                    "id": "cmd5",
+                    "name": "git cherry-pick",
+                    "description": "apply changes introduced by some existing commits"
+                },
+                {
+                    "id": "cmd6",
+                    "name": "git restore",
+                    "description": "restore working tree files"
+                },
+                {
+                    "id": "cmd7",
+                    "name": "git remote",
+                    "description": "manage set of tracked repositories"
+                },
+                {
+                    "id": "cmd8",
+                    "name": "git reset",
+                    "description": "reset current HEAD to the specified state"
+                },
+                {
+                    "id": "cmd9",
+                    "name": "git revert",
+                    "description": "revert some existing commits"
+                },
+                {
+                    "id": "cmd10",
+                    "name": "git rm",
+                    "description": "remove files from the working tree and from the index"
+                },
+                {
+                    "id": "cmd11",
+                    "name": "git rebase",
+                    "description": "reapply commits on top of another base tip"
+                },
+                {
+                    "id": "cmd12",
+                    "name": "git reflog",
+                    "description": "manage reflog information"
+                },
+                {
+                    "id": "cmd13",
+                    "name": "git status",
+                    "description": "Displays the state of the working directory and the staging area."
+                },
+                {
+                    "id": "cmd14",
+                    "name": "git stash",
+                    "description": "Stashes the changes in the working directory and the staging area."
+                },
+                {
+                    "id": "cmd15",
+                    "name": "git submodule",
+                    "description": "Manages the submodules in the repository."
+                },
+                {
+                    "id": "cmd16",
+                    "name": "git switch",
+                    "description": "Switches branches or restores the working directory."
+                },
+                {
+                    "id": "cmd17",
+                    "name": "git show",
+                    "description": "Displays information about a commit or other Git object."
+                },
+                {
+                    "id": "cmd18",
+                    "name": "git shortlog",
+                    "description": "Summarizes the commit history by author."
+                },
+                {
+                    "id": "cmd19",
+                    "name": "git show-branch",
+                    "description": "Shows the commit history of the branches in the repository."
+                },
+                {
+                    "id": "cmd20",
+                    "name": "git update-index",
+                    "description": "Manipulates the index or the staging area."
+                },
+                {
+                    "id": "cmd21",
+                    "name": "git update-ref",
+                    "description": "Updates the object name stored in a ref safely."
+                },
+                {
+                    "id": "cmd22",
+                    "name": "git update-server-info",
+                    "description": "Updates the auxiliary info file to help dumb servers discover the repository's HEAD."
+                },
+                {
+                    "id": "cmd23",
+                    "name": "git upload-archive",
+                    "description": "Creates an archive of the specified commit."
+                }
+            ],
+            "options": [
+                {
+                    "id": "opt1",
+                    "commandId": "cmd1",
+                    "name": "--global",
+                    "description": "Applies the configuration settings to all repositories on the system for the current user."
+                },
+                {
+                    "id": "opt2",
+                    "commandId": "cmd1",
+                    "name": "--edit",
+                    "description": "Opens the global, system, or local Git configuration file in the default text editor."
+                },
+                {
+                    "id": "opt3",
+                    "commandId": "cmd2",
+                    "name": "--branch <name>",
+                    "description": "Specifies a specific branch to clone from the repository."
+                },
+                {
+                    "id": "opt4",
+                    "commandId": "cmd2",
+                    "name": "--mirror",
+                    "description": "Creates a bare repository with all refs from the source repository."
+                },
+                {
+                    "id": "opt5",
+                    "commandId": "cmd3",
+                    "name": "<branch>",
+                    "description": "Switches to the specified branch."
+                },
+                {
+                    "id": "opt6",
+                    "commandId": "cmd4",
+                    "name": "-m <message>",
+                    "description": "Uses the specified `<message>` as the commit message."
+                },
+                {
+                    "id": "opt7",
+                    "commandId": "cmd5",
+                    "name": "<commit>",
+                    "description": "Applies the changes from the specified commit to the current branch."
+                },
+                {
+                    "id": "opt8",
+                    "commandId": "cmd6",
+                    "name": "<file>",
+                    "description": "Specifies the path to the file that you want to restore."
+                },
+                {
+                    "id": "opt9",
+                    "commandId": "cmd7",
+                    "name": "add <name> <url>",
+                    "description": "Add a remote <name> for the repo at <url>."
+                },
+                {
+                    "id": "opt10",
+                    "commandId": "cmd8",
+                    "name": "<commit>",
+                    "description": "Resets the current branch to the specified commit."
+                },
+                {
+                    "id": "opt11",
+                    "commandId": "cmd9",
+                    "name": "<commit>",
+                    "description": "Reverts the changes made in the specified commit."
+                },
+                {
+                    "id": "opt12",
+                    "commandId": "cmd10",
+                    "name": "<file>",
+                    "description": "Specifies the path to the file or directory that you want to remove."
+                },
+                {
+                    "id": "opt13",
+                    "commandId": "cmd11",
+                    "name": "<branch>",
+                    "description": "Rebases the current branch onto the specified branch."
+                },
+                {
+                    "id": "opt14",
+                    "commandId": "cmd12",
+                    "name": "--all",
+                    "description": "Shows all references, not just those in the current repository."
+                },
+                {
+                    "id": "opt15",
+                    "commandId": "cmd13",
+                    "name": "--short",
+                    "description": "Gives the output in the short-format."
+                },
+                {
+                    "id": "opt16",
+                    "commandId": "cmd14",
+                    "name": "save",
+                    "description": "Stashes the changes in the working directory and the staging area."
+                },
+                {
+                    "id": "opt17",
+                    "commandId": "cmd15",
+                    "name": "add <repository>",
+                    "description": "Adds a new submodule to the repository."
+                },
+                {
+                    "id": "opt18",
+                    "commandId": "cmd16",
+                    "name": "<branch>",
+                    "description": "Switches to the specified branch."
+                },
+                {
+                    "id": "opt19",
+                    "commandId": "cmd17",
+                    "name": "<object>",
+                    "description": "Shows the object (commit, tag, tree, etc.) specified by its SHA or other identifier."
+                },
+                {
+                    "id": "opt20",
+                    "commandId": "cmd18",
+                    "name": "-s",
+                    "description": "Only shows the number of commits by each author."
+                },
+                {
+                    "id": "opt21",
+                    "commandId": "cmd19",
+                    "name": "--all",
+                    "description": "Shows all branches in the output."
+                },
+                {
+                    "id": "opt22",
+                    "commandId": "cmd20",
+                    "name": "--assume-unchanged <file>",
+                    "description": "Tells Git to stop checking the working tree files for possible modifications."
+                },
+                {
+                    "id": "opt23",
+                    "commandId": "cmd21",
+                    "name": "<ref> <newvalue>",
+                    "description": "Updates the object name stored in the ref with the new value."
+                },
+                {
+                    "id": "opt24",
+                    "commandId": "cmd22",
+                    "name": "-f, --force",
+                    "description": "Updates the server info even when it does not seem that update is necessary."
+                },
+                {
+                    "id": "opt25",
+                    "commandId": "cmd23",
+                    "name": "<ref>",
+                    "description": "Specifies the commit to upload."
+                }
+            ],
+            "examples": [
+                {
+                    "optionId": "opt1",
+                    "usage": "git config --global user.name 'John Doe'"
+                },
+                {
+                    "optionId": "opt2",
+                    "usage": "git config --edit"
+                },
+                {
+                    "optionId": "opt3",
+                    "usage": "git clone --branch dev https://github.com/user/repo.git"
+                },
+                {
+                    "optionId": "opt4",
+                    "usage": "git clone --mirror https://github.com/user/repo.git"
+                },
+                {
+                    "optionId": "opt5",
+                    "usage": "git checkout main"
+                },
+                {
+                    "optionId": "opt6",
+                    "usage": "git commit -m 'Add new feature'"
+                },
+                {
+                    "optionId": "opt7",
+                    "usage": "git cherry-pick 123456"
+                },
+                {
+                    "optionId": "opt8",
+                    "usage": "git restore myfile.txt"
+                },
+                {
+                    "optionId": "opt9",
+                    "usage": "git remote add origin https://github.com/user/repo.git"
+                },
+                {
+                    "optionId": "opt10",
+                    "usage": "git reset 123456"
+                },
+                {
+                    "optionId": "opt11",
+                    "usage": "git revert 123456"
+                },
+                {
+                    "optionId": "opt12",
+                    "usage": "git rm myfile.txt"
+                },
+                {
+                    "optionId": "opt13",
+                    "usage": "git rebase main"
+                },
+                {
+                    "optionId": "opt14",
+                    "usage": "git reflog --all"
+                },
+                {
+                    "optionId": "opt15",
+                    "usage": "git status --short"
+                },
+                {
+                    "optionId": "opt16",
+                    "usage": "git stash save"
+                },
+                {
+                    "optionId": "opt17",
+                    "usage": "git submodule add https://github.com/example/repo.git"
+                },
+                {
+                    "optionId": "opt18",
+                    "usage": "git switch main"
+                },
+                {
+                    "optionId": "opt19",
+                    "usage": "git show 123456"
+                },
+                {
+                    "optionId": "opt20",
+                    "usage": "git shortlog -s"
+                },
+                {
+                    "optionId": "opt21",
+                    "usage": "git show-branch --all"
+                },
+                {
+                    "optionId": "opt22",
+                    "usage": "git update-index --assume-unchanged myfile.txt"
+                },
+                {
+                    "optionId": "opt23",
+                    "usage": "git update-ref refs/heads/master 123456"
+                },
+                {
+                    "optionId": "opt24",
+                    "usage": "git update-server-info --force"
+                },
+                {
+                    "optionId": "opt25",
+                    "usage": "git upload-archive master /path/to/directory"
+                }
+            ]
         }
     ]
 }
