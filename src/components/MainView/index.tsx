@@ -4,7 +4,7 @@ import { useState } from 'react';
 import CopyToClipboardButton from '../CopyToClipboardButton';
 
 export default function MainView({ command, options, examples }) {
-    const [copiedIndex, setCopiedIndex] = useState(null);  // State to track copied option index
+    const [copiedIndex, setCopiedIndex] = useState(null);  // track copied option index state in copy to clipboard
     const commandOptions = options.filter(option => option.commandId === command.id);
     const commandExamples = commandOptions.map(option =>
         ({ ...option, usage: examples.find(ex => ex.optionId === option.id).usage })

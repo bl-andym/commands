@@ -374,6 +374,31 @@
                     "usage": "git upload-archive master /path/to/directory"
                 }
             ]
+        },
+        {
+            "id": "cat2",
+            "name": "PowerShell Commands",
+            "commands": [
+                {
+                    "id": "cmd1",
+                    "name": "Get-Command",
+                    "description": "Gets all commands."
+                }
+            ],
+            "options": [
+                {
+                    "id": "opt1",
+                    "commandId": "cmd1",
+                    "name": "-Name <name>",
+                    "description": "Specifies the name of the command."
+                }
+            ],
+            "examples": [
+                {
+                    "optionId": "opt1",
+                    "usage": "Get-Command -Name Get-Process"
+                }
+            ]
         }
     ]
 }
