@@ -1,0 +1,130 @@
+[
+    {
+        "id": 0,
+        "name": "Git",
+        "commands": [
+            {
+                "id": 0,
+                "name": "git checkout",
+                "description": "Switch branches or restore working tree files.",
+                "options": [
+                    {
+                        "option": "--branch",
+                        "shorthand": "-b",
+                        "description": "Create/switch to new branch at the same time.",
+                        "arguments": "<newBranchName>",
+                        "required": true,
+                        "example": "git checkout --branch newBranchName"
+                    },
+                    {
+                        "option": "--detach",
+                        "shorthand": "",
+                        "description": "Detach the HEAD to make it point directly to a specific commit or reference, without affecting any branch. This is useful for temporary exploration or testing at a particular state.",
+                        "arguments": "<commit|branch|tag|ref>",
+                        "required": false,
+                        "example": "git checkout --detach commitHash"
+                    },
+                    {
+                        "option": "--track",
+                        "shorthand": "-t",
+                        "description": "When creating a new branch, track a specified remote branch.",
+                        "arguments": "<remoteBranchName>",
+                        "required": false,
+                        "example": "git checkout --track origin/dev"
+                    },
+                    {
+                        "option": "--orphan",
+                        "shorthand": "",
+                        "description": "Create a new branch with no commit history.",
+                        "arguments": "<newBranchName>",
+                        "required": false,
+                        "example": "git checkout --orphan newBranchName"
+                    },
+                    {
+                        "option": "--patch",
+                        "shorthand": "-p",
+                        "description": "Interactively select hunks in the diff between the index and the working tree.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git checkout --patch"
+                    }
+                ]
+            },
+            {
+                "id": 1,
+                "name": "git clone",
+                "description": "Clone a repository into a new directory.",
+                "options": [
+                    {
+                        "option": "--branch",
+                        "shorthand": "-b",
+                        "description": "Specifies a specific branch to clone from the repository.",
+                        "arguments": "<newBranchName> <url>",
+                        "required": false,
+                        "example": "git clone --branch newBranchName https://github.com/user/repo.git"
+                    },
+                    {
+                        "option": "--mirror",
+                        "shorthand": "",
+                        "description": "Creates a bare repository with all refs from the source repository.",
+                        "arguments": " <repoUrl>",
+                        "required": false,
+                        "example": "git clone --mirror https://github.com/user/repo.git"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "name": "Powershell",
+        "commands": [
+            {
+                "id": 0,
+                "name": "Get-ChildItem",
+                "description": "Get items in specified locations.",
+                "options": [
+                    {
+                        "option": "-Path",
+                        "shorthand": "-Path",
+                        "description": "Specifies a path to one or more locations.",
+                        "arguments": "<path>",
+                        "required": true,
+                        "example": "Get-ChildItem -Path C:\\"
+                    },
+                    {
+                        "option": "-Recurse",
+                        "shorthand": "-Recurse",
+                        "description": "Gets the items in the specified locations and in all child items of the locations.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "Get-ChildItem -Path C:\\ -Recurse"
+                    }
+                ]
+            },
+            {
+                "id": 1,
+                "name": "Get-Process",
+                "description": "Get the processes on a local or remote computer.",
+                "options": [
+                    {
+                        "option": "-Name",
+                        "shorthand": "-n",
+                        "description": "Specifies the process names of the processes to be retrieved.",
+                        "arguments": "<processName>",
+                        "required": false,
+                        "example": "Get-Process -Name chrome"
+                    },
+                    {
+                        "option": "-Id",
+                        "shorthand": "-Id",
+                        "description": "Specifies the process IDs of the processes to be retrieved.",
+                        "arguments": "<processId>",
+                        "required": false,
+                        "example": "Get-Process -Id 1234"
+                    }
+                ]
+            }
+        ]
+    }
+]
