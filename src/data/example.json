@@ -489,5 +489,135 @@
                 ]
             }
         ]
+    },
+    {
+        "id": 3,
+        "name": "Contentful cms",
+        "commands": [
+            {
+                "id": 0,
+                "name": "contentful space",
+                "description": "Manage spaces.",
+                "options": [
+                    {
+                        "option": "create",
+                        "shorthand": "create",
+                        "description": "Create a new space.",
+                        "arguments": "<spaceName>",
+                        "required": true,
+                        "example": "contentful space create mySpace"
+                    },
+                    {
+                        "option": "delete",
+                        "shorthand": "delete",
+                        "description": "Delete a space.",
+                        "arguments": "<spaceId>",
+                        "required": true,
+                        "example": "contentful space delete spaceId"
+                    }
+                ]
+            },
+            {
+                "id": 1,
+                "name": "contentful environment",
+                "description": "Manage environments.",
+                "options": [
+                    {
+                        "option": "create",
+                        "shorthand": "create",
+                        "description": "Create a new environment.",
+                        "arguments": "<environmentName>",
+                        "required": true,
+                        "example": "contentful environment create myEnvironment"
+                    },
+                    {
+                        "option": "delete",
+                        "shorthand": "delete",
+                        "description": "Delete an environment.",
+                        "arguments": "<environmentId>",
+                        "required": true,
+                        "example": "contentful environment delete environmentId"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "contentful content-type",
+                "description": "Manage content types.",
+                "options": [
+                    {
+                        "option": "create",
+                        "shorthand": "create",
+                        "description": "Create a new content type.",
+                        "arguments": "<contentTypeName>",
+                        "required": true,
+                        "example": "contentful content-type create myContentType"
+                    },
+                    {
+                        "option": "delete",
+                        "shorthand": "delete",
+                        "description": "Delete a content type.",
+                        "arguments": "<contentTypeId>",
+                        "required": true,
+                        "example": "contentful content-type delete contentTypeId"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "contentful entry",
+                "description": "Manage entries.",
+                "options": [
+                    {
+                        "option": "create",
+                        "shorthand": "create",
+                        "description": "Create a new entry.",
+                        "arguments": "<entryName>",
+                        "required": true,
+                        "example": "contentful entry create myEntry"
+                    },
+                    {
+                        "option": "delete",
+                        "shorthand": "delete",
+                        "description": "Delete an entry.",
+                        "arguments": "<entryId>",
+                        "required": true,
+                        "example": "contentful entry delete entryId"
+                    },
+                    {
+                        "option": "publish",
+                        "shorthand": "publish",
+                        "description": "Publish an entry.",
+                        "arguments": "<entryId>",
+                        "required": true,
+                        "example": "contentful entry publish entryId"
+                    },
+                    {
+                        "option": "unpublish",
+                        "shorthand": "unpublish",
+                        "description": "Unpublish an entry.",
+                        "arguments": "<entryId>",
+                        "required": true,
+                        "example": "contentful entry unpublish entryId"
+                    },
+                    {
+                        "option": "archive",
+                        "shorthand": "archive",
+                        "description": "Archive an entry.",
+                        "arguments": "<entryId>",
+                        "required": true,
+                        "example": "contentful entry archive entryId"
+                    },
+                    {
+                        "option": "unarchive",
+                        "shorthand": "unarchive",
+                        "description": "Unarchive an entry.",
+                        "arguments": "<entryId>",
+                        "required": true,
+                        "example": "contentful entry unarchive entryId"
+                    }
+                ]
+            }
+        ]
     }
 ]

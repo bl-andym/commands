@@ -18,6 +18,8 @@ export default function SideNav({ data, handleSelected }: NavProps) {
             setExpanded(newExpanded ? panel : false);
         };
 
+    const sortedData = [...data].sort((a, b) => a.name.localeCompare(b.name));
+
     return (
         <Box component="section" sx={{
             p: 2,
@@ -33,7 +35,7 @@ export default function SideNav({ data, handleSelected }: NavProps) {
             backgroundColor: 'lightblue',
             marginRight: 1,
         }}>
-            {data.map((category: Category) => (
+            {sortedData.map((category: Category) => (
                 <Accordion
                     key={category.id}
                     expanded={expanded === category.id.toString()}
