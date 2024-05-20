@@ -70,6 +70,209 @@
                         "arguments": " <repoUrl>",
                         "required": false,
                         "example": "git clone --mirror https://github.com/user/repo.git"
+                    },
+                    {
+                        "option": "--depth",
+                        "shorthand": "",
+                        "description": "Create a shallow clone with a history truncated to the specified number of commits.",
+                        "arguments": "<depth> <url>",
+                        "required": false,
+                        "example": "git clone --depth 1"
+                    },
+                    {
+                        "option": "--recurse-submodules",
+                        "shorthand": "--recurse-submodules",
+                        "description": "Initialize all submodules in the repository.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git clone --recurse-submodules"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "git config",
+                "description": "Edit config, save/close file to progress.",
+                "options": [
+                    {
+                        "option": "--global",
+                        "shorthand": "",
+                        "description": "Apply settings globally.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git config --global user.name \"John Doe\""
+                    },
+                    {
+                        "option": "--local",
+                        "shorthand": "",
+                        "description": "Apply settings to the current repository.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git config --local user.name \"John Doe\""
+                    },
+                    {
+                        "option": "--system",
+                        "shorthand": "",
+                        "description": "Apply settings system-wide.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git config --system user.name \"John Doe\""
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "git commit",
+                "description": "Record changes to the repository.",
+                "options": [
+                    {
+                        "option": "--all",
+                        "shorthand": "-a",
+                        "description": "Automatically stage files that have been modified and deleted.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git commit --all"
+                    },
+                    {
+                        "option": "--message",
+                        "shorthand": "-m",
+                        "description": "Use the given message as the commit message.",
+                        "arguments": "<message>",
+                        "required": true,
+                        "example": "git commit --message \"Commit message\""
+                    },
+                    {
+                        "option": "--amend",
+                        "shorthand": "",
+                        "description": "Replace the tip of the current branch by creating a new commit.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git commit --amend"
+                    },
+                    {
+                        "option": "--no-verify",
+                        "shorthand": "",
+                        "description": "Bypass the pre-commit and commit-msg hooks.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git commit --no-verify"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "git push",
+                "description": "Update remote refs along with associated objects.",
+                "options": [
+                    {
+                        "option": "--all",
+                        "shorthand": "--all",
+                        "description": "Push all branches to the remote repository.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git push --all"
+                    },
+                    {
+                        "option": "--force",
+                        "shorthand": "-f",
+                        "description": "Force updates the remote repository with the local repository.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git push --force"
+                    },
+                    {
+                        "option": "--tags",
+                        "shorthand": "--tags",
+                        "description": "Push all tags to the remote repository.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git push --tags"
+                    },
+                    {
+                        "option": "--dry-run",
+                        "shorthand": "",
+                        "description": "Simulate the push operation.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git push --dry-run"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "name": "git pull",
+                "description": "Fetch from and integrate with another repository or a local branch.",
+                "options": [
+                    {
+                        "option": "--rebase",
+                        "shorthand": "",
+                        "description": "Rebase the current branch on top of the upstream branch after fetching.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git pull --rebase"
+                    },
+                    {
+                        "option": "--no-rebase",
+                        "shorthand": "",
+                        "description": "Merge the current branch with the upstream branch after fetching.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git pull --no-rebase"
+                    },
+                    {
+                        "option": "--tags",
+                        "shorthand": "--tags",
+                        "description": "Fetch all tags from the remote repository.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git pull --tags"
+                    },
+                    {
+                        "option": "--dry-run",
+                        "shorthand": "",
+                        "description": "Simulate the pull operation.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git pull --dry-run"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "name": "git merge",
+                "description": "Join two or more development histories together.",
+                "options": [
+                    {
+                        "option": "--no-ff",
+                        "shorthand": "",
+                        "description": "Create a merge commit even when the merge resolves as a fast-forward.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git merge --no-ff"
+                    },
+                    {
+                        "option": "--squash",
+                        "shorthand": "",
+                        "description": "Combine all changes into a single commit.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git merge --squash"
+                    },
+                    {
+                        "option": "--strategy",
+                        "shorthand": "-s",
+                        "description": "Use the given merge strategy.",
+                        "arguments": "<strategy>",
+                        "required": false,
+                        "example": "git merge --strategy recursive"
+                    },
+                    {
+                        "option": "--commit",
+                        "shorthand": "",
+                        "description": "Perform the merge and commit the result.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "git merge --commit"
                     }
                 ]
             }
@@ -81,7 +284,7 @@
         "commands": [
             {
                 "id": 0,
-                "name": "Get-ChildItem",
+                "name": "get-childItem",
                 "description": "Get items in specified locations.",
                 "options": [
                     {
@@ -104,7 +307,7 @@
             },
             {
                 "id": 1,
-                "name": "Get-Process",
+                "name": "get-process",
                 "description": "Get the processes on a local or remote computer.",
                 "options": [
                     {
@@ -122,6 +325,166 @@
                         "arguments": "<processId>",
                         "required": false,
                         "example": "Get-Process -Id 1234"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "get-service",
+                "description": "Get the services on a local or remote computer.",
+                "options": [
+                    {
+                        "option": "-Name",
+                        "shorthand": "-n",
+                        "description": "Specifies the service names of the services to be retrieved.",
+                        "arguments": "<serviceName>",
+                        "required": false,
+                        "example": "Get-Service -Name spooler"
+                    },
+                    {
+                        "option": "-DisplayName",
+                        "shorthand": "-DisplayName",
+                        "description": "Specifies the display names of the services to be retrieved.",
+                        "arguments": "<displayName>",
+                        "required": false,
+                        "example": "Get-Service -DisplayName \"Print Spooler\""
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "get-EventLog",
+                "description": "Get the events in the event logs.",
+                "options": [
+                    {
+                        "option": "-LogName",
+                        "shorthand": "-LogName",
+                        "description": "Specifies the name of the event log to be retrieved.",
+                        "arguments": "<logName>",
+                        "required": true,
+                        "example": "Get-EventLog -LogName System"
+                    },
+                    {
+                        "option": "-EntryType",
+                        "shorthand": "-EntryType",
+                        "description": "Specifies the entry types of the events to be retrieved.",
+                        "arguments": "<entryType>",
+                        "required": false,
+                        "example": "Get-EventLog -LogName System -EntryType Error"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "name": "get-Content",
+                "description": "Get the content of the item at the specified location.",
+                "options": [
+                    {
+                        "option": "-Path",
+                        "shorthand": "-Path",
+                        "description": "Specifies the path to the item.",
+                        "arguments": "<path>",
+                        "required": true,
+                        "example": "Get-Content -Path C:\\file.txt"
+                    },
+                    {
+                        "option": "-TotalCount",
+                        "shorthand": "-TotalCount",
+                        "description": "Specifies the number of lines to be retrieved.",
+                        "arguments": "<count>",
+                        "required": false,
+                        "example": "Get-Content -Path C:\\file.txt -TotalCount 10"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Docker",
+        "commands": [
+            {
+                "id": 0,
+                "name": "docker run",
+                "description": "Run a command in a new container.",
+                "options": [
+                    {
+                        "option": "--name",
+                        "shorthand": "--name",
+                        "description": "Assign a name to the container.",
+                        "arguments": "<containerName>",
+                        "required": false,
+                        "example": "docker run --name myContainerName"
+                    },
+                    {
+                        "option": "--detach",
+                        "shorthand": "-d",
+                        "description": "Run the container in the background.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "docker run --detach"
+                    },
+                    {
+                        "option": "--interactive",
+                        "shorthand": "-i",
+                        "description": "Keep STDIN open even if not attached.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "docker run --interactive"
+                    },
+                    {
+                        "option": "--tty",
+                        "shorthand": "-t",
+                        "description": "Allocate a pseudo-TTY.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "docker run --tty"
+                    }
+                ]
+            },
+            {
+                "id": 1,
+                "name": "docker ps",
+                "description": "List containers.",
+                "options": [
+                    {
+                        "option": "--all",
+                        "shorthand": "-a",
+                        "description": "Show all containers.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "docker ps --all"
+                    },
+                    {
+                        "option": "--quiet",
+                        "shorthand": "-q",
+                        "description": "Only display numeric IDs.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "docker ps --quiet"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "docker images",
+                "description": "List images.",
+                "options": [
+                    {
+                        "option": "--all",
+                        "shorthand": "-a",
+                        "description": "Show all images.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "docker images --all"
+                    },
+                    {
+                        "option": "--quiet",
+                        "shorthand": "-q",
+                        "description": "Only display numeric IDs.",
+                        "arguments": "",
+                        "required": false,
+                        "example": "docker images --quiet"
                     }
                 ]
             }

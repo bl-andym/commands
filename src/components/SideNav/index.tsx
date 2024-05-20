@@ -1,50 +1,57 @@
-import { NavProps, Category } from '../../app/types'
+"use client"
 
-import { Box } from '@mui/material'
+import { NavProps, Category } from '../../app/types'
+import { Box, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
 
 import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Typography from '@mui/material/Typography'
-import Fade from '@mui/material/Fade'
 
 // material ui
 // either grid, box. or stack
 
-export default function SideNav({ data }: NavProps) {
+export default function SideNav({ data, handleSelected }: NavProps) {
     return (
         <Box component="section" sx={{
             p: 2,
             border: '1px solid grey',
+            minWidth: 300,
+            maxWidth: 300,
             width: 300,
             display: 'flex',
             flexDirection: 'column',
             borderRadius: 1,
             height: 'auto',
             minHeight: '100vh',
+            backgroundColor: 'lightblue',
+            marginRight: 1,
         }}>
             {data.map((category: Category) => (
-                <div key={category.id}>
-                    <Accordion defaultExpanded={category.id === 0}>
-                        <AccordionSummary
-                            expandIcon={<ExpandMoreIcon />}
-                            aria-controls="panel1-content"
-                            id="panel1-header"
-                            key={category.id}>
-                            <h3>{category.name}</h3>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                {category.commands.map(command => (
-                                    <div key={command.name}>
+                <Accordion key={category.id} defaultExpanded={category.id === 0}>
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{
+                        backgroundColor: 'DarkGray',
+                    }}>
+                        <Typography component="h2">{category.name}</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails sx={{
+                        backgroundColor: 'LightGray',
+                    }}>
+                        <List>
+                            {category.commands.map(command => (
+                                <ListItem key={command.id} component="div" disablePadding>
+                                    <ListItemButton
+                                        onClick={() => handleSelected(command.id, category.id)}
+                                        style={{ cursor: 'pointer', width: '100%' }}
+                                    >
                                         {command.name}
-                                    </div>
-                                ))}
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                </div>
+                                    </ListItemButton>
+                                </ListItem>
+                            ))}
+                        </List>
+                    </AccordionDetails>
+                </Accordion>
             ))
             }
         </Box>
