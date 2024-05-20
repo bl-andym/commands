@@ -8,11 +8,16 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Typography from '@mui/material/Typography'
-
-// material ui
-// either grid, box. or stack
+import { useState } from 'react'
 
 export default function SideNav({ data, handleSelected }: NavProps) {
+    const [expanded, setExpanded] = useState<string | false>(data.length > 0 ? data[0].id.toString() : false);
+
+    const handleChange =
+        (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+            setExpanded(newExpanded ? panel : false);
+        };
+
     return (
         <Box component="section" sx={{
             p: 2,
@@ -29,7 +34,11 @@ export default function SideNav({ data, handleSelected }: NavProps) {
             marginRight: 1,
         }}>
             {data.map((category: Category) => (
-                <Accordion key={category.id} defaultExpanded={category.id === 0}>
+                <Accordion
+                    key={category.id}
+                    expanded={expanded === category.id.toString()}
+                    onChange={handleChange(category.id.toString())}
+                >
                     <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{
                         backgroundColor: 'DarkGray',
                     }}>
@@ -52,8 +61,7 @@ export default function SideNav({ data, handleSelected }: NavProps) {
                         </List>
                     </AccordionDetails>
                 </Accordion>
-            ))
-            }
+            ))}
         </Box>
     )
 }

@@ -353,7 +353,7 @@
             },
             {
                 "id": 3,
-                "name": "get-EventLog",
+                "name": "get-eventLog",
                 "description": "Get the events in the event logs.",
                 "options": [
                     {
@@ -376,7 +376,7 @@
             },
             {
                 "id": 4,
-                "name": "get-Content",
+                "name": "get-content",
                 "description": "Get the content of the item at the specified location.",
                 "options": [
                     {
