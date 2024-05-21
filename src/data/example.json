@@ -281,12 +281,12 @@
     },
     {
         "id": 1,
-        "default": true,
+        "default": false,
         "name": "Powershell",
         "commands": [
             {
                 "id": 0,
-                "name": "get-childItem",
+                "name": "get-childitem",
                 "description": "Get items in specified locations.",
                 "options": [
                     {
@@ -295,7 +295,7 @@
                         "description": "Specifies a path to one or more locations.",
                         "arguments": "<path>",
                         "required": true,
-                        "example": "get-childItem -path C:\\"
+                        "example": "get-childitem -path C:\\"
                     },
                     {
                         "option": "-recurse",
@@ -303,7 +303,7 @@
                         "description": "Gets the items in the specified locations and in all child items of the locations.",
                         "arguments": "",
                         "required": false,
-                        "example": "get-childItem -path C:\\ -recurse"
+                        "example": "get-childitem -path C:\\ -recurse"
                     }
                 ]
             },
@@ -403,7 +403,7 @@
     },
     {
         "id": 2,
-        "default": false,
+        "default": true,
         "name": "Docker",
         "commands": [
             {

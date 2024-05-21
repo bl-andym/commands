@@ -25,6 +25,7 @@ export type Data = Category[];
 
 export interface NavProps {
     data: Data;
+    defaultCategory: Category | null;
     handleSelected: (commandId: number, categoryId: number) => void;
 }
 

@@ -10,25 +10,32 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Typography from '@mui/material/Typography'
 import { useState, useEffect } from 'react'
 
-interface SideNavProps extends NavProps {
-    defaultCategory: Category | null;
-}
+export default function SideNav({ data, handleSelected, defaultCategory }: NavProps) {
+    const [expanded, setExpanded] = useState<number>(defaultCategory ? defaultCategory.id : 0)
+    const [activeNavItem, setActiveNavItem] = useState<number | null>(null)
 
-export default function SideNav({ data, handleSelected, defaultCategory }: SideNavProps) {
-    const [expanded, setExpanded] = useState<number>(defaultCategory ? defaultCategory.id : 0);
+    const handleListItemClick = (
+        event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+        index: number,
+    ) => {
+        setActiveNavItem(index)
+    }
 
     useEffect(() => {
         if (defaultCategory) {
             setExpanded(defaultCategory.id);
+            if (defaultCategory.commands.length > 0) {
+                setActiveNavItem(defaultCategory.commands[0].id)
+            }
         }
-    }, [defaultCategory]);
+    }, [defaultCategory])
 
     const handleChange =
         (categoryId: number) => () => {
-            setExpanded(categoryId);
+            setExpanded(categoryId)
         };
 
-    const sortedData = [...data].sort((a, b) => a.name.localeCompare(b.name));
+    const sortedData = [...data].sort((a, b) => a.name.localeCompare(b.name))
 
     return (
         <Stack component="section" sx={{
@@ -63,7 +70,11 @@ export default function SideNav({ data, handleSelected, defaultCategory }: SideN
                             {category.commands.map(command => (
                                 <ListItem key={command.id} component="div" disablePadding>
                                     <ListItemButton
-                                        onClick={() => handleSelected(command.id, category.id)}
+                                        selected={activeNavItem === command.id}
+                                        onClick={(event) => {
+                                            handleListItemClick(event, command.id)
+                                            handleSelected(command.id, category.id)
+                                        }}
                                         style={{ cursor: 'pointer', width: '100%' }}
                                     >
                                         <ListItemText>{command.name}</ListItemText>

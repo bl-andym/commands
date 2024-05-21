@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState, useEffect } from 'react'
 import { NavProps, Selected, Category } from './types'
 import Container from '@mui/material/Container'
