@@ -1,8 +1,9 @@
 "use client"
 
+import { CopyToClipboardButtonProps } from '@/app/types'
 import React, { useState } from 'react'
 
-function CopyToClipboardButton({ text, onCopy }) {
+function CopyToClipboardButton({ text, onCopy }: CopyToClipboardButtonProps) {
     const [copied, setCopied] = useState(false)
 
     const handleCopy = () => {

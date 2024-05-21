@@ -1,6 +1,7 @@
 [
     {
         "id": 0,
+        "default": false,
         "name": "Git",
         "commands": [
             {
@@ -280,6 +281,7 @@
     },
     {
         "id": 1,
+        "default": true,
         "name": "Powershell",
         "commands": [
             {
@@ -288,20 +290,20 @@
                 "description": "Get items in specified locations.",
                 "options": [
                     {
-                        "option": "-Path",
-                        "shorthand": "-Path",
+                        "option": "-path",
+                        "shorthand": "-path",
                         "description": "Specifies a path to one or more locations.",
                         "arguments": "<path>",
                         "required": true,
-                        "example": "Get-ChildItem -Path C:\\"
+                        "example": "get-childItem -path C:\\"
                     },
                     {
-                        "option": "-Recurse",
-                        "shorthand": "-Recurse",
+                        "option": "-recurse",
+                        "shorthand": "-recurse",
                         "description": "Gets the items in the specified locations and in all child items of the locations.",
                         "arguments": "",
                         "required": false,
-                        "example": "Get-ChildItem -Path C:\\ -Recurse"
+                        "example": "get-childItem -path C:\\ -recurse"
                     }
                 ]
             },
@@ -311,20 +313,20 @@
                 "description": "Get the processes on a local or remote computer.",
                 "options": [
                     {
-                        "option": "-Name",
+                        "option": "-name",
                         "shorthand": "-n",
                         "description": "Specifies the process names of the processes to be retrieved.",
                         "arguments": "<processName>",
                         "required": false,
-                        "example": "Get-Process -Name chrome"
+                        "example": "Get-Process -name chrome"
                     },
                     {
-                        "option": "-Id",
-                        "shorthand": "-Id",
+                        "option": "-id",
+                        "shorthand": "-id",
                         "description": "Specifies the process IDs of the processes to be retrieved.",
                         "arguments": "<processId>",
                         "required": false,
-                        "example": "Get-Process -Id 1234"
+                        "example": "get-process -Id 1234"
                     }
                 ]
             },
@@ -334,20 +336,20 @@
                 "description": "Get the services on a local or remote computer.",
                 "options": [
                     {
-                        "option": "-Name",
+                        "option": "-name",
                         "shorthand": "-n",
                         "description": "Specifies the service names of the services to be retrieved.",
                         "arguments": "<serviceName>",
                         "required": false,
-                        "example": "Get-Service -Name spooler"
+                        "example": "get-service -name spooler"
                     },
                     {
-                        "option": "-DisplayName",
-                        "shorthand": "-DisplayName",
+                        "option": "-displayname",
+                        "shorthand": "-displayname",
                         "description": "Specifies the display names of the services to be retrieved.",
                         "arguments": "<displayName>",
                         "required": false,
-                        "example": "Get-Service -DisplayName \"Print Spooler\""
+                        "example": "get-service -displayname \"Print Spooler\""
                     }
                 ]
             },
@@ -357,12 +359,12 @@
                 "description": "Get the events in the event logs.",
                 "options": [
                     {
-                        "option": "-LogName",
-                        "shorthand": "-LogName",
+                        "option": "-logname",
+                        "shorthand": "-logname",
                         "description": "Specifies the name of the event log to be retrieved.",
-                        "arguments": "<logName>",
+                        "arguments": "<logname>",
                         "required": true,
-                        "example": "Get-EventLog -LogName System"
+                        "example": "get-eventlog -logname System"
                     },
                     {
                         "option": "-EntryType",
@@ -380,12 +382,12 @@
                 "description": "Get the content of the item at the specified location.",
                 "options": [
                     {
-                        "option": "-Path",
-                        "shorthand": "-Path",
+                        "option": "-path",
+                        "shorthand": "-path",
                         "description": "Specifies the path to the item.",
                         "arguments": "<path>",
                         "required": true,
-                        "example": "Get-Content -Path C:\\file.txt"
+                        "example": "Get-Content -path C:\\file.txt"
                     },
                     {
                         "option": "-TotalCount",
@@ -393,7 +395,7 @@
                         "description": "Specifies the number of lines to be retrieved.",
                         "arguments": "<count>",
                         "required": false,
-                        "example": "Get-Content -Path C:\\file.txt -TotalCount 10"
+                        "example": "Get-Content -path C:\\file.txt -TotalCount 10"
                     }
                 ]
             }
@@ -401,6 +403,7 @@
     },
     {
         "id": 2,
+        "default": false,
         "name": "Docker",
         "commands": [
             {
@@ -492,7 +495,8 @@
     },
     {
         "id": 3,
-        "name": "Contentful cms",
+        "default": false,
+        "name": "Contentful",
         "commands": [
             {
                 "id": 0,

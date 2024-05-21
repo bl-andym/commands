@@ -18,6 +18,7 @@ export interface Category {
     id: number;
     name: string;
     commands: Command[];
+    default: boolean;
 }
 
 export type Data = Category[];
@@ -35,6 +36,11 @@ export interface MainViewProps {
 export interface Selected {
     commandId: number;
     categoryId: number;
+}
+
+export interface CopyToClipboardButtonProps {
+    text: string;
+    onCopy?: () => void;
 }
 
 

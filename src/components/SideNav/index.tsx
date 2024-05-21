@@ -1,27 +1,37 @@
 "use client"
 
 import { NavProps, Category } from '../../app/types'
-import { Box, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
+import { Box, List, ListItem, ListItemButton, ListItemText, Stack } from '@mui/material'
 
 import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import Typography from '@mui/material/Typography'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function SideNav({ data, handleSelected }: NavProps) {
-    const [expanded, setExpanded] = useState<string | false>(data.length > 0 ? data[0].id.toString() : false);
+interface SideNavProps extends NavProps {
+    defaultCategory: Category | null;
+}
+
+export default function SideNav({ data, handleSelected, defaultCategory }: SideNavProps) {
+    const [expanded, setExpanded] = useState<number>(defaultCategory ? defaultCategory.id : 0);
+
+    useEffect(() => {
+        if (defaultCategory) {
+            setExpanded(defaultCategory.id);
+        }
+    }, [defaultCategory]);
 
     const handleChange =
-        (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
-            setExpanded(newExpanded ? panel : false);
+        (categoryId: number) => () => {
+            setExpanded(categoryId);
         };
 
     const sortedData = [...data].sort((a, b) => a.name.localeCompare(b.name));
 
     return (
-        <Box component="section" sx={{
+        <Stack component="section" sx={{
             p: 2,
             border: '1px solid grey',
             minWidth: 300,
@@ -38,8 +48,8 @@ export default function SideNav({ data, handleSelected }: NavProps) {
             {sortedData.map((category: Category) => (
                 <Accordion
                     key={category.id}
-                    expanded={expanded === category.id.toString()}
-                    onChange={handleChange(category.id.toString())}
+                    expanded={expanded === category.id}
+                    onChange={handleChange(category.id)}
                 >
                     <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{
                         backgroundColor: 'DarkGray',
@@ -56,7 +66,7 @@ export default function SideNav({ data, handleSelected }: NavProps) {
                                         onClick={() => handleSelected(command.id, category.id)}
                                         style={{ cursor: 'pointer', width: '100%' }}
                                     >
-                                        {command.name}
+                                        <ListItemText>{command.name}</ListItemText>
                                     </ListItemButton>
                                 </ListItem>
                             ))}
@@ -64,6 +74,6 @@ export default function SideNav({ data, handleSelected }: NavProps) {
                     </AccordionDetails>
                 </Accordion>
             ))}
-        </Box>
+        </Stack>
     )
 }
