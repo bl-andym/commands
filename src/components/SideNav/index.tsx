@@ -70,7 +70,7 @@ export default function SideNav({ data, handleSelected, defaultCategory }: NavPr
                             {category.commands.map(command => (
                                 <ListItem key={command.id} component="div" disablePadding>
                                     <ListItemButton
-                                        selected={activeNavItem === command.id}
+                                        // selected={activeNavItem === command.id}
                                         onClick={(event) => {
                                             handleListItemClick(event, command.id)
                                             handleSelected(command.id, category.id)

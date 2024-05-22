@@ -1,0 +1,24 @@
+[
+    {
+        "id": 0,
+        "default": true,
+        "name": "cli tool name",
+        "commands": [
+            {
+                "id": 0,
+                "name": "command name",
+                "description": "string",
+                "options": [
+                    {
+                        "option": "string",
+                        "shorthand": "string",
+                        "description": "string",
+                        "arguments": "string",
+                        "required": true,
+                        "example": "string"
+                    }
+                ]
+            }
+        ]
+    }
+]

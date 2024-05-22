@@ -23,23 +23,66 @@ export default function MainView({ data, selected }: MainViewProps) {
             {
                 selectedCommand && (
                     <div>
-                        <h2>{selectedCategory?.name}</h2>
-                        <div key={selectedCommand.id}>
-                            <h3>{selectedCommand.name}</h3>
-                            <p>{selectedCommand.description}</p>
-                            <ul>
-                                {selectedCommand.options.map(option => (
-                                    <li key={option.option}>
-                                        <strong>{option.option}</strong> - {option.description}
-                                        {/*option.shorthand && <span> ({option.shorthand})</span>*/}
-                                        {option.arguments && <div>Arguments: {option.arguments}</div>}
-                                        <div>Example: {option.example}</div>
-                                        <CopyToClipboardButton text={option.example} />
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        <Card sx={{ marginBottom: 1 }}>
+                            <CardContent>
+                                <Typography component="h1" sx={{
+                                    fontSize: 24,
+                                    fontWeight: 'bold',
+
+                                }}>
+                                    {selectedCategory?.name}
+                                </Typography>
+                                <Typography component="h2" sx={{
+                                    fontSize: 22,
+                                    fontWeight: 'bold',
+                                    marginBottom: 1,
+                                }}>
+                                    <Typography component="span" sx={{
+                                        fontWeight: 'normal',
+                                        fontSize: 16,
+                                    }}>Command:</Typography> {selectedCommand.name}
+                                </Typography>
+                                <Typography component="p">
+                                    {selectedCommand.description}
+                                </Typography>
+                            </CardContent>
+                        </Card>
+
+                        {selectedCommand.options.map(option => (
+                            <Card sx={{ marginBottom: 1 }} key={option.option}>
+                                <CardContent>
+                                    <Typography component="span" sx={{
+                                        border: '1px solid lightgrey',
+                                        padding: '1px 6px',
+                                        backgroundColor: 'WhiteSmoke',
+                                        color: 'black',
+                                        fontSize: 14,
+                                        marginBottom: 2,
+                                        display: 'inline-block',
+                                    }}>Flag:</Typography>
+                                    <Typography component="p">
+                                        <strong>{option.option}</strong>
+                                    </Typography>
+                                    <Typography component="p">
+                                        {option.description}
+                                    </Typography>
+                                    <Typography component="p">
+                                        Shorthand: {option.shorthand && <span> {option.shorthand}</span>}
+                                    </Typography>
+                                    <Typography component="p">
+                                        Arguments: {option.arguments}
+                                    </Typography>
+                                    <Typography component="p">
+                                        Example: {option.example}
+                                    </Typography>
+                                    <Typography sx={{ marginTop: 1 }}><CopyToClipboardButton text={option.example} /></Typography>
+                                </CardContent>
+                            </Card>
+                        ))}
+
+
                     </div>
+
                 )
             }
         </Stack>
