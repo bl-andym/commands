@@ -15,7 +15,7 @@ export default function SideNav({ data, handleSelected, defaultCategory }: NavPr
     const [activeNavItem, setActiveNavItem] = useState<number | null>(null)
 
     const handleListItemClick = (
-        event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+        //event: React.MouseEvent<HTMLDivElement, MouseEvent>,
         index: number,
     ) => {
         setActiveNavItem(index)
@@ -24,16 +24,19 @@ export default function SideNav({ data, handleSelected, defaultCategory }: NavPr
     useEffect(() => {
         if (defaultCategory) {
             setExpanded(defaultCategory.id);
-            if (defaultCategory.commands.length > 0) {
-                setActiveNavItem(defaultCategory.commands[0].id)
-            }
+            // Reset active item when default category changes
+            setActiveNavItem(defaultCategory.commands[0].id);
         }
     }, [defaultCategory])
 
+
     const handleChange =
         (categoryId: number) => () => {
-            setExpanded(categoryId)
-        };
+            setExpanded(categoryId);
+            // Reset active item when changing category
+            setActiveNavItem(null);
+        }
+
 
     const sortedData = [...data].sort((a, b) => a.name.localeCompare(b.name))
 
@@ -70,9 +73,9 @@ export default function SideNav({ data, handleSelected, defaultCategory }: NavPr
                             {category.commands.map(command => (
                                 <ListItem key={command.id} component="div" disablePadding>
                                     <ListItemButton
-                                        // selected={activeNavItem === command.id}
-                                        onClick={(event) => {
-                                            handleListItemClick(event, command.id)
+                                        selected={activeNavItem === command.id}
+                                        onClick={() => {
+                                            handleListItemClick(command.id)
                                             handleSelected(command.id, category.id)
                                         }}
                                         style={{ cursor: 'pointer', width: '100%' }}
