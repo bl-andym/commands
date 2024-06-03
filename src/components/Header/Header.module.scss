@@ -1,0 +1,51 @@
+
+.border-width-1 {
+  border-width: 1px;
+}
+
+.border-width-2 {
+  border-width: 2px;
+}
+
+.border-width-3 {
+  border-width: 3px;
+}
+
+.border-width-4 {
+  border-width: 4px;
+}
+
+/* Base styles */
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: var(--header-padding);
+  background-color: var(--background-color-light);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--border-color);
+  margin-bottom: var(--header-margin-bottom);
+  border-radius: var(--border-radius-2);
+}
+
+.headerLogo {
+  margin-right: var(--header-logo-margin-right);
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.headerTitle {
+  margin: 0;
+  font-size: var(--header-title-font-size);
+  color: var(--header-title-color);
+}
+
+.headerSubtext {
+  margin: 0;
+  font-size: var(--header-subtext-font-size);
+  color: var(--header-subtext-color);
+}

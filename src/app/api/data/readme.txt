@@ -14,7 +14,8 @@ uri:
 
 A MongoClient instance is created with specific options:
 - serverApi.version is set to ServerApiVersion.v1.
-- strict mode and deprecationErrors are enabled to enforce strict server API usage and handle deprecated methods.
+- strict mode and deprecationErrors are enabled to enforce strict server API usage 
+and handle deprecated methods.
 
 The GET function is defined as an asynchronous function to handle the GET request.
 

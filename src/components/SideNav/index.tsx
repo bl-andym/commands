@@ -1,25 +1,38 @@
-"use client"
+'use client';
 
-import { NavProps, Category } from '../../app/types'
-import { Box, List, ListItem, ListItemButton, ListItemText, Stack } from '@mui/material'
+import { NavProps, Category } from '../../app/types';
+import {
+    Box,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    Stack,
+} from '@mui/material';
 
-import Accordion from '@mui/material/Accordion'
-import AccordionSummary from '@mui/material/AccordionSummary'
-import AccordionDetails from '@mui/material/AccordionDetails'
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import Typography from '@mui/material/Typography'
-import { useState, useEffect } from 'react'
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Typography from '@mui/material/Typography';
+import { useState, useEffect } from 'react';
 
-export default function SideNav({ data, handleSelected, defaultCategory }: NavProps) {
-    const [expanded, setExpanded] = useState<number>(defaultCategory ? defaultCategory.id : 0)
-    const [activeNavItem, setActiveNavItem] = useState<number | null>(null)
+export default function SideNav({
+    data,
+    handleSelected,
+    defaultCategory,
+}: NavProps) {
+    const [expanded, setExpanded] = useState<number>(
+        defaultCategory ? defaultCategory.id : 0
+    );
+    const [activeNavItem, setActiveNavItem] = useState<number | null>(null);
 
     const handleListItemClick = (
         //event: React.MouseEvent<HTMLDivElement, MouseEvent>,
-        index: number,
+        index: number
     ) => {
-        setActiveNavItem(index)
-    }
+        setActiveNavItem(index);
+    };
 
     useEffect(() => {
         if (defaultCategory) {
@@ -27,60 +40,77 @@ export default function SideNav({ data, handleSelected, defaultCategory }: NavPr
             // Reset active item when default category changes
             setActiveNavItem(defaultCategory.commands[0].id);
         }
-    }, [defaultCategory])
+    }, [defaultCategory]);
 
+    const handleChange = (categoryId: number) => () => {
+        setExpanded(categoryId);
+        // Reset active item when changing category
+        setActiveNavItem(null);
+    };
 
-    const handleChange =
-        (categoryId: number) => () => {
-            setExpanded(categoryId);
-            // Reset active item when changing category
-            setActiveNavItem(null);
-        }
-
-
-    const sortedData = [...data].sort((a, b) => a.name.localeCompare(b.name))
+    const sortedData = [...data].sort((a, b) => a.name.localeCompare(b.name));
 
     return (
-        <Stack component="section" sx={{
-            p: 2,
-            border: '1px solid grey',
-            minWidth: 300,
-            maxWidth: 300,
-            width: 300,
-            display: 'flex',
-            flexDirection: 'column',
-            borderRadius: 1,
-            height: 'auto',
-            minHeight: '100vh',
-            backgroundColor: 'lightblue',
-            marginRight: 1,
-        }}>
+        <Stack
+            component="section"
+            sx={{
+                p: 2,
+                minWidth: 300,
+                maxWidth: 300,
+                width: 300,
+                display: 'flex',
+                flexDirection: 'column',
+                borderRadius: 1,
+                height: 'auto',
+                minHeight: '100vh',
+                backgroundColor: 'lightblue',
+                marginRight: 1,
+            }}
+            className="border-width-1"
+        >
             {sortedData.map((category: Category) => (
                 <Accordion
                     key={category.id}
                     expanded={expanded === category.id}
                     onChange={handleChange(category.id)}
                 >
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{
-                        backgroundColor: 'DarkGray',
-                    }}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        sx={{
+                            backgroundColor: 'DarkGray',
+                        }}
+                    >
                         <Typography component="h2">{category.name}</Typography>
                     </AccordionSummary>
-                    <AccordionDetails sx={{
-                        backgroundColor: 'LightGray',
-                    }}>
+                    <AccordionDetails
+                        sx={{
+                            backgroundColor: 'LightGray',
+                        }}
+                    >
                         <List>
-                            {category.commands.map(command => (
-                                <ListItem key={command.id} component="div" disablePadding>
+                            {category.commands.map((command) => (
+                                <ListItem
+                                    key={command.id}
+                                    component="div"
+                                    disablePadding
+                                >
                                     <ListItemButton
                                         selected={activeNavItem === command.id}
                                         onClick={() => {
-                                            handleListItemClick(command.id)
-                                            handleSelected(command.id, category.id)
+                                            handleListItemClick(command.id);
+                                            handleSelected(
+                                                command.id,
+                                                category.id
+                                            );
                                         }}
-                                        style={{ cursor: 'pointer', width: '100%' }}
+                                        style={{
+                                            cursor: 'pointer',
+                                            width: '100%',
+                                        }}
                                     >
-                                        <ListItemText>{command.name}</ListItemText>
+                                        <ListItemText>
+                                            {command.name}
+                                        </ListItemText>
                                     </ListItemButton>
                                 </ListItem>
                             ))}
@@ -89,5 +119,5 @@ export default function SideNav({ data, handleSelected, defaultCategory }: NavPr
                 </Accordion>
             ))}
         </Stack>
-    )
+    );
 }

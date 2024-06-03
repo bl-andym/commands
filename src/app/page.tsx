@@ -2,7 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { NavProps, Selected, Category } from './types';
-import Container from '@mui/material/Container';
+import { Box, Container } from '@mui/material';
+
+import '../styles/global.scss';
+import '../styles/variables.scss';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -68,6 +71,7 @@ export default function Home() {
             component="div"
             sx={{
                 display: 'flex',
+                flexDirection: 'column',
                 width: '100%',
                 margin: 0,
                 paddingLeft: 0,
@@ -77,12 +81,26 @@ export default function Home() {
             {data.length === 0 && <div>Loading...</div>}
             {data.length > 0 && (
                 <>
-                    <SideNav
-                        data={data}
-                        handleSelected={handleSelected}
-                        defaultCategory={defaultCategory}
-                    />
-                    <MainView data={data} selected={selected} />
+                    <Header />
+                    <Box
+                        component="div"
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            flexWrap: 'nowrap',
+                            width: '100%',
+                            height: '100%',
+                            margin: 0,
+                            padding: 0,
+                        }}
+                    >
+                        <SideNav
+                            data={data}
+                            handleSelected={handleSelected}
+                            defaultCategory={defaultCategory}
+                        />
+                        <MainView data={data} selected={selected} />
+                    </Box>
                 </>
             )}
         </Container>

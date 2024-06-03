@@ -15,7 +15,7 @@ export default function MainView({ data, selected }: MainViewProps) {
                 border: '1px solid grey',
                 borderRadius: 1,
                 flexGrow: 1,
-                backgroundColor: 'WhiteSmoke ',
+                backgroundColor: '#f8f9fa',
                 height: 'auto',
                 minHeight: '100vh',
             }}
