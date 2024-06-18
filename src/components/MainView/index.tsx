@@ -2,6 +2,7 @@
 import { MainViewProps } from '@/app/types'
 import { Card, CardContent, Stack, Typography } from '@mui/material'
 import CopyToClipboardButton from '../CopyToClipboardButton'
+import style from './MainView.module.scss'
 
 export default function MainView({ data, selected }: MainViewProps) {
     const selectedCategory = data.find(category => category.id === selected.categoryId);
@@ -10,15 +11,8 @@ export default function MainView({ data, selected }: MainViewProps) {
     return (
         <Stack
             component="section"
-            sx={{
-                p: 2,
-                border: '1px solid grey',
-                borderRadius: 1,
-                flexGrow: 1,
-                backgroundColor: '#f8f9fa',
-                height: 'auto',
-                minHeight: '100vh',
-            }}
+            sx={{ p: 2 }}
+            className={`${style.border} ${style.bg} ${style.dimensions}`}
         >
             {
                 selectedCommand && (
@@ -31,6 +25,10 @@ export default function MainView({ data, selected }: MainViewProps) {
 
                                 }}>
                                     {selectedCategory?.name}
+                                    <Typography component="span" sx={{
+                                        fontSize: 16,
+                                        fontWeight: 'normal',
+                                    }}> Commands</Typography>
                                 </Typography>
                                 <Typography component="h2" sx={{
                                     fontSize: 22,
@@ -40,7 +38,18 @@ export default function MainView({ data, selected }: MainViewProps) {
                                     <Typography component="span" sx={{
                                         fontWeight: 'normal',
                                         fontSize: 16,
-                                    }}>Command:</Typography> {selectedCommand.name}
+                                    }}>Command:</Typography>
+                                    <Typography
+                                        component="span"
+                                        sx={{
+                                            fontWeight: 'bold',
+                                            fontSize: 20,
+                                        }}
+                                    > {selectedCommand.name}</Typography>
+                                    <Typography component="span" sx={{
+                                        fontSize: 12,
+                                        fontWeight: 'normal',
+                                    }}> {`#flags: ${selectedCommand.options.length}`}</Typography>
                                 </Typography>
                                 <Typography component="p">
                                     {selectedCommand.description}
@@ -48,7 +57,7 @@ export default function MainView({ data, selected }: MainViewProps) {
                             </CardContent>
                         </Card>
 
-                        {selectedCommand.options.map(option => (
+                        {selectedCommand.options.map((option, index) => (
                             <Card sx={{ marginBottom: 1 }} key={option.option}>
                                 <CardContent>
                                     <Typography component="span" sx={{
@@ -56,10 +65,10 @@ export default function MainView({ data, selected }: MainViewProps) {
                                         padding: '1px 6px',
                                         backgroundColor: 'WhiteSmoke',
                                         color: 'black',
-                                        fontSize: 14,
+                                        fontSize: 12,
                                         marginBottom: 2,
                                         display: 'inline-block',
-                                    }}>Flag:</Typography>
+                                    }}>{`#Flag: ${index + 1}`}</Typography>
                                     <Typography component="p">
                                         <strong>{option.option}</strong>
                                     </Typography>
@@ -73,16 +82,21 @@ export default function MainView({ data, selected }: MainViewProps) {
                                         Arguments: {option.arguments}
                                     </Typography>
                                     <Typography component="p">
-                                        Example: {option.example}
+                                        Use case: <Typography component="code"
+                                            sx={{
+                                                backgroundColor: 'WhiteSmoke',
+                                                padding: '2px 4px',
+                                                fontSize: '1rem',
+                                                fontFamily: 'monospace',
+                                            }}>
+                                            {option.example}
+                                        </Typography>
                                     </Typography>
                                     <Typography sx={{ marginTop: 1 }}><CopyToClipboardButton text={option.example} /></Typography>
                                 </CardContent>
                             </Card>
                         ))}
-
-
                     </div>
-
                 )
             }
         </Stack>

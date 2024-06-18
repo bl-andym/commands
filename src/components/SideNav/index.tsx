@@ -17,6 +17,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Typography from '@mui/material/Typography';
 import { useState, useEffect } from 'react';
 
+import style from './SideNav.module.scss';
+
 export default function SideNav({
     data,
     handleSelected,
@@ -60,13 +62,11 @@ export default function SideNav({
                 width: 300,
                 display: 'flex',
                 flexDirection: 'column',
-                borderRadius: 1,
                 height: 'auto',
                 minHeight: '100vh',
-                backgroundColor: 'lightblue',
                 marginRight: 1,
             }}
-            className="border-width-1"
+            className={`${style.border} ${style.background}`}
         >
             {sortedData.map((category: Category) => (
                 <Accordion
@@ -88,32 +88,34 @@ export default function SideNav({
                         }}
                     >
                         <List>
-                            {category.commands.map((command) => (
-                                <ListItem
-                                    key={command.id}
-                                    component="div"
-                                    disablePadding
-                                >
-                                    <ListItemButton
-                                        selected={activeNavItem === command.id}
-                                        onClick={() => {
-                                            handleListItemClick(command.id);
-                                            handleSelected(
-                                                command.id,
-                                                category.id
-                                            );
-                                        }}
-                                        style={{
-                                            cursor: 'pointer',
-                                            width: '100%',
-                                        }}
+                            {category.commands
+                                .sort((a, b) => a.name.localeCompare(b.name))
+                                .map((command) => (
+                                    <ListItem
+                                        key={command.id}
+                                        component="div"
+                                        disablePadding
                                     >
-                                        <ListItemText>
-                                            {command.name}
-                                        </ListItemText>
-                                    </ListItemButton>
-                                </ListItem>
-                            ))}
+                                        <ListItemButton
+                                            selected={activeNavItem === command.id}
+                                            onClick={() => {
+                                                handleListItemClick(command.id);
+                                                handleSelected(
+                                                    command.id,
+                                                    category.id
+                                                );
+                                            }}
+                                            style={{
+                                                cursor: 'pointer',
+                                                width: '100%',
+                                            }}
+                                        >
+                                            <ListItemText>
+                                                {command.name}
+                                            </ListItemText>
+                                        </ListItemButton>
+                                    </ListItem>
+                                ))}
                         </List>
                     </AccordionDetails>
                 </Accordion>

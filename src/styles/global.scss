@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: 'Gaegu';
+    src: local('Gaegu'), url(../fonts/Gaegu-Regular.ttf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Gaegu';
+    font-weight: 900;
+    src: local('Gaegu'), url(../fonts/Gaegu-Light.ttf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Gaegu';
+    font-weight: 900;
+    src: local('Gaegu'), url(../fonts/Gaegu-Bold.ttf) format('opentype');
+}

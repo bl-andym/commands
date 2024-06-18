@@ -1,13 +1,28 @@
-/* src/styles/variables.css */
 :root {
-    --background-color-light: #f8f9fa;
-    --border-color: #dee2e6;
-    --border-radius-1: 1px;
-    --header-title-color: #343a40;
-    --header-subtext-color: #6c757d;
-    --header-padding: 20px;
-    --header-margin-bottom: 10px;
-    --header-title-font-size: 24px;
-    --header-subtext-font-size: 16px;
-    --header-logo-margin-right: 20px;
-  }  
+
+  --background-color-blue: lightblue;
+  --background-color-grey: #f8f9fa;
+
+  --header-title-color: #343a40;
+  --header-subtext-color: #6c757d;
+  --header-title-font-size: 4rem;
+  --header-subtext-font-size: 3rem;
+  --header-logo-margin-right: 20px;
+
+  --margin-bottom-10: 10px;
+
+  --font-family-gaegu: 'Gaegu', Arial, serif;
+
+  --border: 1px solid #dee2e6;
+  --border-radius-4: 4px;
+
+  --content-padding: 16px;
+
+  // minWidth: 300,
+  // maxWidth: 300,
+  // width: 300,
+  // display: 'flex',
+  // flexDirection: 'column',
+  // height: 'auto',
+  // minHeight: '100vh',
+}
