@@ -72,9 +72,9 @@ export default function MainView({ data, selected }: MainViewProps) {
                                     <Typography component="p">
                                         <strong>{option.option}</strong>
                                     </Typography>
-                                    <Typography component="p">
+                                    {/* <Typography component="p">
                                         {option.description}
-                                    </Typography>
+                                    </Typography> */}
                                     <Typography component="p">
                                         Shorthand: {option.shorthand && <span> {option.shorthand}</span>}
                                     </Typography>
@@ -94,6 +94,18 @@ export default function MainView({ data, selected }: MainViewProps) {
                                     </Typography>
                                     <Typography sx={{ marginTop: 1 }}><CopyToClipboardButton text={option.example} /></Typography>
                                 </CardContent>
+                                {/* <CardContent>
+                                    <Card>
+                                        <Typography component="h3">Description:</Typography>
+                                        <Typography component="p">
+                                            {option.description}
+                                        </Typography>
+                                        <Typography component="h3">Rational:</Typography>
+                                        <Typography component="p">
+                                            {option.description}
+                                        </Typography>
+                                    </Card>
+                                </CardContent> */}
                             </Card>
                         ))}
                     </div>

@@ -29,6 +29,7 @@ export default function Home() {
 
     const handleSelected = (commandId: number, categoryId: number) => {
         setSelected({ commandId, categoryId });
+        //window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     useEffect(() => {

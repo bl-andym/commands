@@ -2,7 +2,6 @@
 
 import { NavProps, Category } from '../../app/types';
 import {
-    Box,
     List,
     ListItem,
     ListItemButton,
@@ -30,7 +29,6 @@ export default function SideNav({
     const [activeNavItem, setActiveNavItem] = useState<number | null>(null);
 
     const handleListItemClick = (
-        //event: React.MouseEvent<HTMLDivElement, MouseEvent>,
         index: number
     ) => {
         setActiveNavItem(index);
@@ -55,18 +53,8 @@ export default function SideNav({
     return (
         <Stack
             component="section"
-            sx={{
-                p: 2,
-                minWidth: 300,
-                maxWidth: 300,
-                width: 300,
-                display: 'flex',
-                flexDirection: 'column',
-                height: 'auto',
-                minHeight: '100vh',
-                marginRight: 1,
-            }}
-            className={`${style.border} ${style.background}`}
+            sx={{ p: 2, marginRight: 1, }}
+            className={`${style.border} ${style.background} ${style.dimensions}`}
         >
             {sortedData.map((category: Category) => (
                 <Accordion
@@ -105,10 +93,7 @@ export default function SideNav({
                                                     category.id
                                                 );
                                             }}
-                                            style={{
-                                                cursor: 'pointer',
-                                                width: '100%',
-                                            }}
+                                            className={style.cursor}
                                         >
                                             <ListItemText>
                                                 {command.name}
