@@ -53,14 +53,15 @@ export default function SideNav({
     return (
         <Stack
             component="section"
-            sx={{ p: 2, marginRight: 1, }}
-            className={`${style.border} ${style.background} ${style.dimensions}`}
+            sx={{ p: 2 }}
+            className={`${style.container} ${style.dimensions}`}
         >
-            {sortedData.map((category: Category) => (
+            {sortedData.map((category: Category, index: number) => (
                 <Accordion
                     key={category.id}
                     expanded={expanded === category.id}
                     onChange={handleChange(category.id)}
+                //className={`${index === 0 ? style.topAccordion : ''} ${index === sortedData.length - 1 ? style.bottomAccordion : ''}`}
                 >
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}
@@ -107,4 +108,5 @@ export default function SideNav({
             ))}
         </Stack>
     );
+
 }

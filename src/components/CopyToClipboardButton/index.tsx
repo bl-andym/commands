@@ -2,6 +2,7 @@
 
 import { CopyToClipboardButtonProps } from '@/app/types'
 import React, { useState } from 'react'
+import style from './CopyToClipboardButton.module.scss'
 
 function CopyToClipboardButton({ text, onCopy }: CopyToClipboardButtonProps) {
     const [copied, setCopied] = useState(false)
@@ -19,9 +20,9 @@ function CopyToClipboardButton({ text, onCopy }: CopyToClipboardButtonProps) {
     }
 
     return (
-        <button onClick={handleCopy} style={{ cursor: 'pointer' }}>
+        <a onClick={handleCopy} className={style.copyCodeButton}>
             {copied ? '✓ Copied' : 'Copy to Clipboard'}
-        </button>
+        </a>
     )
 }
 

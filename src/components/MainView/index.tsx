@@ -1,8 +1,9 @@
 "use client"
 import { MainViewProps } from '@/app/types'
 import { Card, CardContent, Stack, Typography } from '@mui/material'
-import CopyToClipboardButton from '../CopyToClipboardButton'
+import FlagContent from '@/components/FlagContent'
 import style from './MainView.module.scss'
+
 
 export default function MainView({ data, selected }: MainViewProps) {
     const selectedCategory = data.find(category => category.id === selected.categoryId);
@@ -12,11 +13,11 @@ export default function MainView({ data, selected }: MainViewProps) {
         <Stack
             component="section"
             sx={{ p: 2 }}
-            className={`${style.border} ${style.bg} ${style.dimensions}`}
+            className={`${style.container}`}
         >
             {
                 selectedCommand && (
-                    <div>
+                    <>
                         <Card sx={{ marginBottom: 1 }}>
                             <CardContent>
                                 <Typography component="h1" sx={{
@@ -58,57 +59,17 @@ export default function MainView({ data, selected }: MainViewProps) {
                         </Card>
 
                         {selectedCommand.options.map((option, index) => (
-                            <Card sx={{ marginBottom: 1 }} key={option.option}>
-                                <CardContent>
-                                    <Typography component="span" sx={{
-                                        border: '1px solid lightgrey',
-                                        padding: '1px 6px',
-                                        backgroundColor: 'WhiteSmoke',
-                                        color: 'black',
-                                        fontSize: 12,
-                                        marginBottom: 2,
-                                        display: 'inline-block',
-                                    }}>{`#Flag: ${index + 1}`}</Typography>
-                                    <Typography component="p">
-                                        <strong>{option.option}</strong>
-                                    </Typography>
-                                    {/* <Typography component="p">
-                                        {option.description}
-                                    </Typography> */}
-                                    <Typography component="p">
-                                        Shorthand: {option.shorthand && <span> {option.shorthand}</span>}
-                                    </Typography>
-                                    <Typography component="p">
-                                        Arguments: {option.arguments}
-                                    </Typography>
-                                    <Typography component="p">
-                                        Use case: <Typography component="code"
-                                            sx={{
-                                                backgroundColor: 'WhiteSmoke',
-                                                padding: '2px 4px',
-                                                fontSize: '1rem',
-                                                fontFamily: 'monospace',
-                                            }}>
-                                            {option.example}
-                                        </Typography>
-                                    </Typography>
-                                    <Typography sx={{ marginTop: 1 }}><CopyToClipboardButton text={option.example} /></Typography>
-                                </CardContent>
-                                {/* <CardContent>
-                                    <Card>
-                                        <Typography component="h3">Description:</Typography>
-                                        <Typography component="p">
-                                            {option.description}
-                                        </Typography>
-                                        <Typography component="h3">Rational:</Typography>
-                                        <Typography component="p">
-                                            {option.description}
-                                        </Typography>
-                                    </Card>
-                                </CardContent> */}
-                            </Card>
+                            <FlagContent
+                                key={index}
+                                option={option.option}
+                                shorthand={option.shorthand}
+                                args={option.arguments}
+                                description={option.description}
+                                example={option.example}
+                                idx={index}
+                            />
                         ))}
-                    </div>
+                    </>
                 )
             }
         </Stack>

@@ -1,18 +1,13 @@
-.border {
+.container {
     border: var(--border);
     border-radius: var(--border-radius-4);
-}
-
-.background {
     background-color: var(--background-color-blue);
-}
-
-.dimensions {
     min-width: 200px;
     max-width: 240px;
     width: 100%;
-    display: 'flex';
-    flex-direction: 'column';
-    height: 'auto';
-    min-height: '100vh';
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    margin-right: 10px;
 }

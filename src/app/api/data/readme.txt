@@ -9,6 +9,10 @@ MongoClient and ServerApiVersion:
 NextResponse: 
 - Imported from next/server to handle HTTP responses in a Next.js serverless function.
 
+dotenv:
+- a module that loads environment variables from a .env file into process.env.
+- makes variables accessible in the application via process.env.VARIABLE_NAME.
+
 uri: 
 - MongoDB connection string with placeholders for the username and password.
 

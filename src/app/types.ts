@@ -43,5 +43,13 @@ export interface CopyToClipboardButtonProps {
     text: string;
     onCopy?: () => void;
 }
+export interface OptionType {
+    option: string;
+    shorthand?: string;
+    args?: string;
+    description: string;
+    example: string;
+    idx: number;
+}
 
 

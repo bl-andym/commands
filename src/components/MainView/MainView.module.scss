@@ -1,15 +1,16 @@
-.bg {
+.container {
     background-color: var(--background-color-grey);
-}
-
-.border {
     border: var(--border);
     border-radius: var(--border-radius-4);
+    flex-grow: 1;
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 8px; // compensate for drop shadow on last card
 }
 
-.dimensions {
-    flex-grow: 1;
-    height: 'auto';
-    min-height: '100vh';
-    padding-bottom: 8px; // compensate for drop shadow on last card
+.useCase {
+    background-color: var(--background-color-grey);
+    padding: 2px 4px;
+    font-size: 1rem;
+    font-family: 'monospace';
 }

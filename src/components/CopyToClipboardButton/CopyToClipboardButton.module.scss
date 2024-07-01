@@ -1,0 +1,10 @@
+.copyCodeButton {
+    padding: 1px 4px;
+    display: inline-block;
+    background-color: #f8f9fa;
+
+    &:hover {
+        background-color: #ECEEED;
+        cursor: pointer;
+    }
+}
