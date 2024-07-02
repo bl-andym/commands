@@ -15,7 +15,14 @@
                         "description": "string",
                         "arguments": "string",
                         "required": true,
-                        "example": "string"
+                        "example": "string",
+                        "arg_combinations": [
+                            {
+                                "arg": "string",
+                                "description": "string",
+                                "example": "string"
+                            }
+                        ]
                     }
                 ]
             }

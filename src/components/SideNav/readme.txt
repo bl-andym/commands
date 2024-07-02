@@ -1,4 +1,6 @@
-### Component Description: `SideNav`
+### Component Description: SideNav
+
+Instantiated in page.tsx
 
 Display a list of categories, each containing a list of commands, in an accordion-style layout.
 
