@@ -66,6 +66,7 @@ export default function MainView({ data, selected }: MainViewProps) {
                                 args={option.arguments}
                                 description={option.description}
                                 example={option.example}
+                                arg_combinations={option.arg_combinations}
                                 idx={index}
                             />
                         ))}

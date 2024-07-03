@@ -5,6 +5,7 @@ export interface Option {
     arguments?: string;
     required: boolean;
     example: string;
+    arg_combinations: ArgCombinationType[];
 }
 
 export interface Command {
@@ -43,6 +44,11 @@ export interface CopyToClipboardButtonProps {
     text: string;
     onCopy?: () => void;
 }
+export interface ArgCombinationType {
+    arg: string;
+    description: string;
+    example: string;
+}
 export interface OptionType {
     option: string;
     shorthand?: string;
@@ -50,6 +56,7 @@ export interface OptionType {
     description: string;
     example: string;
     idx: number;
+    arg_combinations: ArgCombinationType[];
 }
 
 
