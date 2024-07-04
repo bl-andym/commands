@@ -1,7 +1,7 @@
 // src/components/FlagContent/index.tsx
 'use client';
 
-import { Card, CardContent, Stack, Typography } from '@mui/material'
+import { Card, CardContent, Box, Typography } from '@mui/material'
 import CopyToClipboardButton from '../CopyToClipboardButton'
 import style from './FlagContent.module.scss'
 import { OptionType } from '@/app/types'
@@ -41,25 +41,27 @@ export default function FlagContent({
                     <Typography component="div" className={style.objKey} sx={{ marginTop: 1 }}>
                         <CopyToClipboardButton text={example} />
                     </Typography>
-                    <Typography component="div" className="toggle" sx={{ marginTop: 1 }}>
-                        <h3>Arguments:</h3>
+                    <Typography component="div" className={style.toggle} sx={{ marginTop: 1 }}>
+                        <h3>Argument combinations:</h3>
                         {
                             arg_combinations.map((item, idx) => (
                                 <>
-                                    <Typography component="div" className={style.objKey} key={idx}>
-                                        <span>#Argument:</span>
-                                        <span>{item.arg}</span>
-                                    </Typography>
-                                    <Typography component="p" className={style.content}>
-                                        {item.description}
-                                    </Typography>
-                                    <Typography component="div" className={style.objKey}>
-                                        <span>Use case:</span>
-                                        <span>{item.example}</span>
-                                    </Typography>
-                                    <Typography component="div" className={style.objKey} sx={{ marginTop: 1 }}>
-                                        <CopyToClipboardButton text={item.example} />
-                                    </Typography>
+                                    <Card component="div" className={style.innerCard}>
+                                        <Typography component="div" className={style.objKey} key={idx}>
+                                            <span>#Argument:</span>
+                                            <span>{item.arg}</span>
+                                        </Typography>
+                                        <Typography component="p" className={style.content}>
+                                            {item.description}
+                                        </Typography>
+                                        <Typography component="div" className={style.objKey}>
+                                            <span>Use case:</span>
+                                            <span>{item.example}</span>
+                                        </Typography>
+                                        <Typography component="div" className={style.objKey} sx={{ marginTop: 1 }}>
+                                            <CopyToClipboardButton text={item.example} />
+                                        </Typography>
+                                    </Card>
                                 </>
                             ))
                         }
