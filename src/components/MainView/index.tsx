@@ -18,43 +18,18 @@ export default function MainView({ data, selected }: MainViewProps) {
             {
                 selectedCommand && (
                     <>
-                        <Card sx={{ marginBottom: 1 }}>
+                        <Card className={`${style.commandHeader}`}>
                             <CardContent>
-                                <Typography component="h1" sx={{
-                                    fontSize: 24,
-                                    fontWeight: 'bold',
-
-                                }}>
+                                <Typography component="h1">
                                     {selectedCategory?.name}
-                                    <Typography component="span" sx={{
-                                        fontSize: 16,
-                                        fontWeight: 'normal',
-                                    }}> Commands</Typography>
+                                    <span> Commands</span>
                                 </Typography>
-                                <Typography component="h2" sx={{
-                                    fontSize: 22,
-                                    fontWeight: 'bold',
-                                    marginBottom: 1,
-                                }}>
-                                    <Typography component="span" sx={{
-                                        fontWeight: 'normal',
-                                        fontSize: 16,
-                                    }}>Command:</Typography>
-                                    <Typography
-                                        component="span"
-                                        sx={{
-                                            fontWeight: 'bold',
-                                            fontSize: 20,
-                                        }}
-                                    > {selectedCommand.name}</Typography>
-                                    <Typography component="span" sx={{
-                                        fontSize: 12,
-                                        fontWeight: 'normal',
-                                    }}> {`#flags: ${selectedCommand.options.length}`}</Typography>
+                                <Typography component="h2">
+                                    <span>Command:</span>
+                                    <span> {selectedCommand.name}</span>
+                                    <span> {`#flags: ${selectedCommand.options.length}`}</span>
                                 </Typography>
-                                <Typography component="p">
-                                    {selectedCommand.description}
-                                </Typography>
+                                <p>{selectedCommand.description}</p>
                             </CardContent>
                         </Card>
 

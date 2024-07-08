@@ -3,7 +3,7 @@
 
 import { Card, CardContent, Box, Typography } from '@mui/material'
 import CopyToClipboardButton from '../CopyToClipboardButton'
-import style from './FlagContent.module.scss'
+import style from './FlagContent-dev.module.scss'
 import { OptionType } from '@/app/types'
 import { useState } from 'react';
 
@@ -18,10 +18,17 @@ export default function FlagContent({
 }: OptionType) {
     // toggleElement
     const [isOpen, setIsOpen] = useState(false)
+
+    // Step 1: Initialize state
+    const [isChecked, setIsChecked] = useState(false);
+    // Step 3: Handle changes
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
+    };
     return (
         <>
-            <Card sx={{ marginBottom: 1 }} key={option} className="xxx">
-                <CardContent sx={{}}>
+            <Card sx={{ marginBottom: 1 }} key={option} className="flagWrap">
+                <CardContent className={`${style.flagContent}`}>
                     <Typography component="div" className={style.objKey}>
                         <span>{`#Flag: ${idx + 1}`}</span>
                         <span>{option}</span>
@@ -34,7 +41,7 @@ export default function FlagContent({
                         <span>#Argument:</span>
                         <span>{args}</span>
                     </Typography>
-                    <Typography component="p" className={style.content}>
+                    <Typography component="p" className={style.description}>
                         {description}
                     </Typography>
                     <Box
@@ -47,44 +54,48 @@ export default function FlagContent({
                         <Typography component="div" className={style.objKey} sx={{ marginTop: 1 }}>
                             <CopyToClipboardButton text={example} />
                         </Typography>
-                        <Typography component="div" sx={{ marginTop: 1 }}>
-                            <Typography
-                                component="span"
-                                onClick={() => setIsOpen(!isOpen)}
-                            >
-                                {isOpen ? <span>Args: -</span> : <span>Args: +</span>}
+                        <Typography
+                            component="div"
+                            sx={{ marginTop: 1 }}
+                            className={style.toggleWrap}
+                        >
+                            <input
+                                id={`id_${idx + 1}`}
+                                type="checkbox"
+                                name={`name_${idx + 1}`}
+                                checked={isChecked}
+                                onChange={handleCheckboxChange}
+                            />
+                            <label htmlFor={`id_${idx + 1}`}>Args:</label>
+
+
+                            <Typography component="div" className={`${style.toggle} ${isOpen ? style.open : ''}`} sx={{ marginTop: 1 }}>
+                                <h3>Argument combinations:</h3>
+                                {
+                                    arg_combinations.map((item, idx) => (
+                                        <>
+                                            <Card component="div" className={style.innerCard} key={idx}>
+                                                <Typography component="div" className={style.objKey}>
+                                                    <span>#Argument:</span>
+                                                    <span>{item.arg}</span>
+                                                </Typography>
+                                                <p className={style.content}>
+                                                    {item.description}
+                                                </p>
+                                                <Typography component="div" className={style.objKey}>
+                                                    <span>Use case:</span>
+                                                    <span>{item.example}</span>
+                                                </Typography>
+                                                <Typography component="div" className={style.objKey} sx={{ marginTop: 1 }}>
+                                                    <CopyToClipboardButton text={item.example} />
+                                                </Typography>
+                                            </Card>
+                                        </>
+                                    ))
+                                }
                             </Typography>
                         </Typography>
                     </Box>
-
-                    {isOpen && (
-                        // className={`${style.toggleContainer} ${isOpen ? style.open : ''}`}
-                        <Typography component="div" className={`${style.toggle} ${isOpen ? style.open : ''}`} sx={{ marginTop: 1 }}>
-                            <h3>Argument combinations:</h3>
-                            {
-                                arg_combinations.map((item, idx) => (
-                                    <>
-                                        <Card component="div" className={style.innerCard} key={idx}>
-                                            <Typography component="div" className={style.objKey}>
-                                                <span>#Argument:</span>
-                                                <span>{item.arg}</span>
-                                            </Typography>
-                                            <Typography component="p" className={style.content}>
-                                                {item.description}
-                                            </Typography>
-                                            <Typography component="div" className={style.objKey}>
-                                                <span>Use case:</span>
-                                                <span>{item.example}</span>
-                                            </Typography>
-                                            <Typography component="div" className={style.objKey} sx={{ marginTop: 1 }}>
-                                                <CopyToClipboardButton text={item.example} />
-                                            </Typography>
-                                        </Card>
-                                    </>
-                                ))
-                            }
-                        </Typography>
-                    )}
                 </CardContent>
             </Card>
         </>
