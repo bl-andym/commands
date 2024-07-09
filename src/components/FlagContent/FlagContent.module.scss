@@ -60,30 +60,30 @@
             label.toggleControl {
                 position: relative;
                 cursor: pointer;
+            }
 
-                span {
-                    font-size: var(--font-size-small);
+            label.toggleControl span {
+                font-size: var(--font-size-small);
+            }
 
-                    &:first-of-type:hover {
-                        text-decoration: underline;
-                    }
+            /* Underline the first span when either span is hovered */
+            label.toggleControl:hover span:first-of-type {
+                text-decoration: underline;
+            }
 
-                    &:last-of-type {
-                        opacity: 0.5;
-                    }
-                }
+            label.toggleControl span:last-of-type {
+                opacity: 0.5;
+            }
 
-                &::after {
-                    // content: '\271B';
-                    content: '\002B';
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    left: auto;
-                    opacity: 0.5;
-                    height: 20px;
-                    margin-left: var(--spacing-4);
-                }
+            label.toggleControl::after {
+                content: '\002B';
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: auto;
+                opacity: 0.5;
+                height: 20px;
+                margin-left: var(--spacing-4);
             }
 
             .toggle {

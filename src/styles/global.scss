@@ -3,8 +3,8 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: #353334;
-    margin-top: 10px;
+    background-color: var(--color-grey-5);
+    margin-top: var(--spacing-10);
 }
 
 @font-face {

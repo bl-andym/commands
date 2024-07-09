@@ -1,0 +1,177 @@
+@import './variables';
+
+/* Font Size Classes */
+.smallText {
+    font-size: var(--font-size-small);
+}
+
+.mediumText {
+    font-size: var(--font-size-medium);
+}
+
+.largeText {
+    font-size: var(--font-size-large);
+}
+
+.xlargeText {
+    font-size: var(--font-size-xlarge);
+}
+
+.xxlargeText {
+    font-size: var(--font-size-xxlarge);
+}
+
+.xxxlargeText {
+    font-size: var(--font-size-xxxlarge);
+}
+
+/* Padding and Margin Classes */
+.spacing-0 {
+    padding: var(--spacing-0);
+    margin: var(--spacing-0);
+}
+
+.spacing-4 {
+    padding: var(--spacing-4);
+    margin: var(--spacing-4);
+}
+
+.spacing-6 {
+    padding: var(--spacing-6);
+    margin: var(--spacing-6);
+}
+
+.spacing-8 {
+    padding: var(--spacing-8);
+    margin: var(--spacing-8);
+}
+
+.spacing-10 {
+    padding: var(--spacing-10);
+    margin: var(--spacing-10);
+}
+
+.spacing-16 {
+    padding: var(--spacing-16);
+    margin: var(--spacing-16);
+}
+
+.spacing-20 {
+    padding: var(--spacing-20);
+    margin: var(--spacing-20);
+}
+
+.paddingTb1Lr4 {
+    padding: var(--spacing-1) var(--spacing-4);
+}
+
+/* Background Color Classes */
+.bgBlue {
+    background-color: var(--color-blue);
+}
+
+.bgGrey {
+    background-color: var(--color-grey);
+}
+
+.bgGrey2 {
+    background-color: var(--color-grey-2);
+}
+
+.bgGrey3 {
+    background-color: var(--color-grey-3);
+}
+
+.bgGrey4 {
+    background-color: var(--color-grey-4);
+}
+
+.bgGrey5 {
+    background-color: var(--color-grey-5);
+}
+
+.bgSmoke {
+    background-color: var(--color-smoke);
+}
+
+/* Font Color Classes */
+.textBlue {
+    color: var(--color-blue);
+}
+
+.textGrey {
+    color: var(--color-grey);
+}
+
+.textGrey2 {
+    color: var(--color-grey-2);
+}
+
+.textGrey3 {
+    color: var(--color-grey-3);
+}
+
+.textGrey4 {
+    color: var(--color-grey-4);
+}
+
+.textGrey5 {
+    color: var(--color-grey-5);
+}
+
+.textSmoke {
+    color: var(--color-smoke);
+}
+
+/* Border Classes */
+.border {
+    border: var(--border);
+}
+
+.border-width {
+    border-width: var(--border-width);
+}
+
+.border-style {
+    border-style: var(--border-style);
+}
+
+.border-color {
+    border-color: var(--border-color);
+}
+
+.border-radius-2 {
+    border-radius: var(--border-radius-2);
+}
+
+.border-radius-4 {
+    border-radius: var(--border-radius-4);
+}
+
+.containerBorder {
+    border: var(--container-border);
+}
+
+/* Cursor Classes */
+.cursor {
+    cursor: var(--cursor);
+}
+
+/* Font Family Classes */
+.fontGaegu {
+    font-family: var(--font-family-gaegu);
+}
+
+/* Font Weight Classes */
+.fontBold {
+    font-weight: var(--bold);
+}
+
+.fontNormal {
+    font-weight: var(--normal);
+}
+
+/* Display Classes */
+.inlineBlock {
+    display: var(--inline-block);
+}
