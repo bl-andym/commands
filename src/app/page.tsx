@@ -4,9 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { NavProps, Selected, Category } from './types';
 import { Box, Container } from '@mui/material';
 
-import '../styles/variables.scss';
+//import '../styles/variables.scss';
 import '../styles/global.scss';
-
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';

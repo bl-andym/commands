@@ -25,7 +25,7 @@ export default function FlagContent({
     };
     return (
         <>
-            <Card sx={{ marginBottom: 1 }} key={option} className={`${style.flagWrap}`}>
+            <Card sx={{ marginBottom: 1 }} key={option} className={``}>
                 <CardContent className={`${style.flagContent}`}>
                     <Typography component="div" className={`${style.flagHeading}`}>
                         <span>{`#Flag: ${idx + 1}`}</span>

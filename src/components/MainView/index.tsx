@@ -18,7 +18,7 @@ export default function MainView({ data, selected }: MainViewProps) {
             {
                 selectedCommand && (
                     <>
-                        <Card className={`${style.commandHeader}`}>
+                        <Card component="div" className={`${style.commandHeader}`}>
                             <CardContent>
                                 <Typography component="h1">
                                     {selectedCategory?.name}
@@ -29,7 +29,9 @@ export default function MainView({ data, selected }: MainViewProps) {
                                     <span> {selectedCommand.name}</span>
                                     <span> {`#flags: ${selectedCommand.options.length}`}</span>
                                 </Typography>
-                                <p>{selectedCommand.description}</p>
+                                <Typography component="p">
+                                    {selectedCommand.description}
+                                </Typography>
                             </CardContent>
                         </Card>
 

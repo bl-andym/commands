@@ -1,10 +1,10 @@
 .copyCodeButton {
     padding: 1px 4px;
     display: inline-block;
-    background-color: #f8f9fa;
+    background-color: var(--color-grey);
 
     &:hover {
-        background-color: #ECEEED;
-        cursor: pointer;
+        background-color: var(--color-grey-2);
+        cursor: var(--cursor);
     }
 }

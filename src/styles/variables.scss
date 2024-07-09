@@ -11,7 +11,7 @@
   --header-subtext-color: #6c757d;
 
   // font
-  --font-family-gaegu: 'Gaegu', Arial, serif;
+
   --header-title-font-size: 4rem;
   --header-subtext-font-size: 4rem;
   --header-logo-margin-right: 20px;
@@ -50,14 +50,20 @@
   --border-radius-4: 4px;
   --border-radius-2: 2px;
 
-  // cursor
-  --cursor: pointer;
-
-  // display
-  --inline-block: inline-block;
 
 
   // A better approach
+
+  // cursor
+  --cursor: pointer;
+
+  /* Color Variables */
+  --color-blue: lightblue;
+  --color-grey: #f8f9fa;
+  --color-grey-2: #ECEEED;
+  --color-grey-3: #343a40;
+  --color-grey-4: #6c757d;
+  --color-smoke: #F5F5F5;
 
   // spacing
   --spacing-0: 0;
@@ -69,16 +75,17 @@
   --spacing-20: 20px;
 
   // font
+  --font-family-gaegu: 'Gaegu', Arial, serif;
   --bold: bold;
+  --normal: normal;
   --font-size-small: 0.75rem; //12px
   --font-size-medium: 1rem; // 16px
   --font-size-large: 1.25rem; // 20px
-  --font-size-xlarge: 1.5rem; // 24px
+  --font-size-xlarge: 1.375rem; // 22px
+  --font-size-xxlarge: 1.5rem; // 24px
+  --font-size-xxxlarge: 4rem; // 64px
 
-  /* Color Variables */
-  --color-blue: lightblue;
-  --color-grey: #f8f9fa;
-  --color-grey-2: #ECEEED;
-  --color-smoke: #F5F5F5;
+  // display
+  --inline-block: inline-block;
 
 }

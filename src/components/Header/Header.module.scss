@@ -1,10 +1,10 @@
 /* Base styles */
 .header {
-  padding: var(--content-padding);
-  background-color: var(--background-color-grey-2);
+  padding: var(--spacing-16);
+  background-color: var(--color-grey-2);
   border: var(--border);
   border-radius: var(--border-radius-4);
-  margin-bottom: var(--margin-bottom-10);
+  margin-bottom: var(--spacing-10);
 
   .headerLogo {
     margin-right: var(--header-logo-margin-right);
@@ -17,11 +17,11 @@
   }
 
   h1 {
-    font-size: var(--header-title-font-size);
-    color: var(--header-title-color);
+    font-size: var(--font-size-xxxlarge);
+    color: var(--color-grey-3);
     font-family: var(--font-family-gaegu);
-    font-weight: bold;
-    margin: 0;
+    font-weight: var(--bold);
+    margin: var(--spacing-0);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -30,8 +30,8 @@
   .headerSubtext {
     font-family: var(--font-family-gaegu);
     margin: 0;
-    font-size: var(--header-subtext-font-size);
-    color: var(--header-subtext-color);
+    font-size: var(--font-size-xxxlarge);
+    color: var(--color-grey-4);
   }
 
 }

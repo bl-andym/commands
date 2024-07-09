@@ -1,47 +1,48 @@
 .container {
-    background-color: var(--background-color-grey);
+    background-color: var(--color-grey);
     border: var(--border);
     border-radius: var(--border-radius-4);
     flex-grow: 1;
     height: auto;
-    padding-bottom: 8px; // compensate for drop shadow on last card
+    padding-bottom: var(--spacing-8); // compensate for drop shadow on last card
 
     .commandHeader {
-        margin-bottom: 8px;
+
+        margin-bottom: var(--spacing-8);
 
         h1 {
-            font-size: 24px;
-            font-weight: bold;
+            font-size: var(--font-size-xxlarge);
+            font-weight: var(--bold);
 
             span {
-                font-size: 16px;
-                font-weight: normal
+                font-size: var(--font-size-medium);
+                font-weight: var(--normal);
             }
         }
 
         h2 {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 8px;
+            font-size: var(--font-size-xlarge);
+            font-weight: var(--bold);
+            margin-bottom: var(--spacing-8);
 
             span:first-of-type {
-                font-size: 16px;
-                font-weight: normal;
+                font-size: var(--font-size-medium);
+                font-weight: var(--normal);
             }
 
             span:nth-last-child(2) {
-                font-size: 20px;
-                font-weight: bold;
+                font-size: var(--font-size-large);
+                font-weight: var(--bold);
             }
 
             span:last-of-type {
-                font-size: 12px;
-                font-weight: normal;
+                font-size: var(--font-size-small);
+                font-weight: var(--normal);
             }
         }
 
         div:first-of-type {
-            padding-bottom: 16px;
+            padding-bottom: var(--spacing-16);
         }
     }
 }
