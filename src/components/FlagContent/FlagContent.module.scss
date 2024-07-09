@@ -1,80 +1,121 @@
-.objKey {
-    border: var(--border);
-    color: var(--header-title-color);
-    font-size: 1rem;
-    display: inline-block;
-    margin-right: 20px;
-
-    &:last-of-type {
-        margin-right: 0;
+.flagContent {
+    &:last-child {
+        padding-bottom: var(--spacing-10);
     }
 
-    span {
-        padding: 1px 4px;
-        display: inline-block;
-    }
+    .flagHeading {
+        border: var(--border);
+        color: var(--header-title-color);
+        font-size: 1rem;
+        display: var(--inline-block);
+        margin-right: var(--spacing-20);
 
-    span:first-of-type {
-        background-color: var(--background-color-grey);
-        border-right: 1px solid #dee2e6;
-
-        &:hover {
-            background-color: #ECEEED;
-            cursor: default;
+        &:last-of-type {
+            margin-right: var(--spacing-0);
         }
+
+        span {
+            padding: var(--padding-tb1-lr4);
+            display: var(--inline-block);
+
+            &:first-of-type {
+                background-color: var(--background-color-grey);
+                border-right: var(--border);
+
+                &:hover {
+                    background-color: var(--background-color-grey-2);
+                    cursor: var(--cursor);
+                }
+            }
+
+            &:last-of-type {
+                font-weight: var(--bold);
+            }
+        }
+
     }
 
-    span:last-of-type {
-        font-weight: bold;
-    }
-
-    &:nth-last-of-type(2) {
-        margin-right: 8px;
-    }
-
-}
-
-.content {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.toggle {
-    max-height: 0;
-    transition: max-height 0.5s ease-in-out;
-
-    &.open {
-        max-height: 1000px;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin-top: 0;
+    .description {
+        margin-top: var(--spacing-20);
+        margin-bottom: var(--spacing-20);
     }
 
     .innerCard {
-        padding: 16px;
+        padding: var(--spacing-16);
         box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
         overflow: hidden;
-        margin-bottom: 6px;
+        margin-bottom: var(--spacing-6);
+        background-color: #FAFAFA;
     }
-}
 
-.cardFooter {
-    // display: flex;
-    // flex-direction: row;
+    .cardFooter {
 
-    div {
-        margin-top: 0;
+        .toggleWrap {
+            margin-top: var(--spacing-16);
 
-        &:last-child {
-            cursor: pointer;
-            margin-top: 16px;
+            .toggleHeading {
+                margin-top: 0;
+            }
+
+            label.toggleControl {
+                position: relative;
+                cursor: pointer;
+
+                span {
+                    font-size: var(--font-size-small);
+
+                    &:first-of-type:hover {
+                        text-decoration: underline;
+                    }
+
+                    &:last-of-type {
+                        opacity: 0.5;
+                    }
+                }
+
+                &::after {
+                    // content: '\271B';
+                    content: '\002B';
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: auto;
+                    opacity: 0.5;
+                    height: 20px;
+                    margin-left: var(--spacing-4);
+                }
+            }
+
+            .toggle {
+                margin-top: var(--spacing-16);
+                max-height: 0;
+                visibility: hidden;
+                transition: all 0.6s ease-in-out;
+
+                * {
+                    opacity: 0;
+                    transition: all 0.8s ease-in-out;
+                }
+            }
+
+            input {
+                display: none;
+
+                &:checked+label+.toggle {
+                    max-height: 1000vh;
+                    visibility: visible;
+                    opacity: 1;
+
+                    * {
+                        opacity: 1;
+                    }
+                }
+
+                &:checked+label::after {
+                    // content: '\268A';
+                    content: '\2212';
+                }
+            }
         }
-
     }
 }

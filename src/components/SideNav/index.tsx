@@ -54,14 +54,13 @@ export default function SideNav({
         <Stack
             component="section"
             sx={{ p: 2 }}
-            className={`${style.container} ${style.dimensions}`}
+            className={`${style.container}`}
         >
             {sortedData.map((category: Category, index: number) => (
                 <Accordion
                     key={category.id}
                     expanded={expanded === category.id}
                     onChange={handleChange(category.id)}
-                //className={`${index === 0 ? style.topAccordion : ''} ${index === sortedData.length - 1 ? style.bottomAccordion : ''}`}
                 >
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}

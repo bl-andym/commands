@@ -16,8 +16,32 @@
   --header-subtext-font-size: 4rem;
   --header-logo-margin-right: 20px;
 
-  // pad/margin
+  // margin
+  --margin-top-0: 0;
+  --margin-right-0: 0;
+  --margin-bottom-0: 0;
+  --margin-left-0: 0;
+  --margin-all-0: 0;
+
+  --margin-top-10: 10px;
+  --margin-right-10: 10px;
   --margin-bottom-10: 10px;
+  --margin-left-10: 10px;
+  --margin-all-10: 10px;
+
+  --margin-top-20: 20px;
+  --margin-right-20: 20px;
+  --margin-bottom-20: 20px;
+  --margin-left-20: 20px;
+  --margin-all-20: 20px;
+
+  // margin misc
+  --padding-tb1-lr4: 1px 4px;
+
+  // padding
+  --padding-all-16: 16px;
+
+  // used in header, needs to be generic
   --content-padding: 16px;
 
   // border
@@ -26,5 +50,35 @@
   --border-radius-4: 4px;
   --border-radius-2: 2px;
 
+  // cursor
   --cursor: pointer;
+
+  // display
+  --inline-block: inline-block;
+
+
+  // A better approach
+
+  // spacing
+  --spacing-0: 0;
+  --spacing-4: 4px;
+  --spacing-6: 6px;
+  --spacing-8: 8px;
+  --spacing-10: 10px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+
+  // font
+  --bold: bold;
+  --font-size-small: 0.75rem; //12px
+  --font-size-medium: 1rem; // 16px
+  --font-size-large: 1.25rem; // 20px
+  --font-size-xlarge: 1.5rem; // 24px
+
+  /* Color Variables */
+  --color-blue: lightblue;
+  --color-grey: #f8f9fa;
+  --color-grey-2: #ECEEED;
+  --color-smoke: #F5F5F5;
+
 }
